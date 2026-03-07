@@ -3,111 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burak Tonoz | Projeler</title>
+    <title>Burak Tonoz | Portfolyo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Ana Renkler ve Genel Ayarlar */
+        :root {
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #fff;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 40px 20px;
         }
 
-        .header {
+        /* Profil ve Başlık Bölümü */
+        .header-section {
             text-align: center;
-            margin-top: 60px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
         }
 
-        .header h1 {
-            font-size: 36px;
-            margin: 0 0 10px 0;
-            letter-spacing: 2px;
+        .profile-img-placeholder {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.1);
         }
 
-        .header p {
-            font-size: 18px;
-            color: #cbd5e1;
-            margin: 0;
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
+        .header-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--text-main);
+            transform: translateY(-3px);
+        }
+
+        /* Projeler Grid (Izgara) Yapısı */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            width: 90%;
-            max-width: 1000px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            animation: fadeInUp 1s ease-out;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+        /* Cam Efektli (Glassmorphism) Kartlar */
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            background: rgba(255, 255, 255, 0.15);
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .card h2 {
-            margin-top: 0;
-            font-size: 22px;
-            color: #fff;
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
 
-        .card p {
-            color: #e2e8f0;
-            font-size: 14px;
+        .project-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
+        /* Modern Buton Tasarımı */
         .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #f1f5f9;
-            color: #1e3c72;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--text-main);
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: background 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            width: fit-content;
         }
 
         .btn:hover {
-            background-color: #cbd5e1;
+            background: var(--text-main);
+            color: var(--bg-color);
+            border-color: var(--text-main);
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobil Cihazlar İçin İnce Ayarlar */
+        @media (max-width: 768px) {
+            .header-section h1 { font-size: 2rem; }
+            .project-card { padding: 30px 20px; }
+            .projects-grid { gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>BURAK TONOZ</h1>
-        <p>Web Uygulamaları ve Proje Portfolyosu</p>
+    <div class="header-section">
+        <div class="profile-img-placeholder">
+            BT
+        </div>
+        <h1>Burak Tonoz</h1>
+        <p>Harita Mühendisi & Web Geliştirici</p>
+        
+        <div class="social-links">
+            <a href="https://github.com/buraktonoz" target="_blank" title="GitHub Profilim"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="LinkedIn Profilim"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:ornek@mail.com" title="Bana Ulaşın"><i class="fas fa-envelope"></i></a>
+        </div>
     </div>
 
     <div class="projects-grid">
         
-        <div class="card">
-            <h2>📝 BELTAŞ İzin Formu</h2>
-            <p>Personel izin formlarını hızlıca doldurup PDF formatında indirmeyi sağlayan akıllı web uygulaması.</p>
-            <a href="/izinformu/" class="btn">Uygulamaya Git</a>
+        <div class="project-card">
+            <div>
+                <i class="fas fa-file-pdf card-icon"></i>
+                <h2>BELTAŞ İzin Formu</h2>
+                <p>Personel izin süreçlerini dijitalleştiren, hızlı veri girişi sağlayıp anında resmi PDF çıktısı üreten akıllı kurum içi web uygulaması.</p>
+            </div>
+            <a href="/izinformu/" class="btn">
+                Projeyi İncele <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
-        <div class="card">
-            <h2>💬 Federal Chat App</h2>
-            <p>Gerçek zamanlı mesajlaşma ve iletişim altyapısı sunan modern web tabanlı sohbet uygulaması.</p>
-            <a href="/federal-chat-app/" class="btn">Sohbete Katıl</a>
+        <div class="project-card">
+            <div>
+                <i class="fas fa-comments card-icon" style="color: #8b5cf6;"></i>
+                <h2>Federal Chat App</h2>
+                <p>Kullanıcıların anında iletişim kurmasını sağlayan, modern arayüzlü ve gerçek zamanlı (real-time) mesajlaşma platformu altyapısı.</p>
+            </div>
+            <a href="/federal-chat-app/" class="btn">
+                Sohbete Katıl <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
     </div>
