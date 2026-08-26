@@ -1,291 +1,203 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Arama Sonuçları İçin Meta Açıklaması (Burası eklendi) -->
     <meta name="description" content="Harita Mühendisi ve Program Geliştirici Burak Tonoz'un kişisel portfolyo web sitesi. Geliştirdiğim projeleri inceleyebilir ve benimle iletişime geçebilirsiniz.">
-    
-    <title>Burak Tonoz</title>
+    <title>Burak Tonoz - Portfolio</title>
     
     <link rel="icon" type="image/png" href="https://github.com/buraktonoz.png">
     <link rel="apple-touch-icon" href="https://github.com/buraktonoz.png">
-    <meta name="theme-color" content="#0f172a"> 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#09090b"> 
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        mono: ['Geist Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#09090b',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* Ana Renkler ve Genel Ayarlar */
-        :root {
-            --bg-color: #0f172a;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #60a5fa;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.05);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
         body {
-            background-color: var(--bg-color);
+            background-color: #09090b;
+            /* Arka plan için çok hafif, derin bir ışıltı */
             background-image: 
-                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+                radial-gradient(circle at 15% 50%, rgba(30, 58, 138, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05), transparent 25%);
             background-attachment: fixed;
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        /* Profil ve Başlık Bölümü */
-        .header-section {
-            text-align: center;
-            margin-bottom: 60px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        /* Profil Fotoğrafı Ayarı */
-        .profile-img-placeholder {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
-            display: block;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-            border: 4px solid rgba(255, 255, 255, 0.15);
-            transition: transform 0.3s ease;
         }
         
-        .profile-img-placeholder:hover {
-            transform: scale(1.05);
-        }
-
-        .header-section h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .header-section p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 300;
-        }
-
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--text-main);
-            transform: translateY(-3px);
-        }
-
-        /* Projeler Grid (Izgara) Yapısı */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            width: 100%;
-            max-width: 1100px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        /* Cam Efektli (Glassmorphism) Kartlar */
-        .project-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: left;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .project-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        /* Modern Buton Tasarımı */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 24px;
-            background: transparent;
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-            width: fit-content;
-        }
-
-        .btn:hover {
-            background: var(--text-main);
-            color: var(--bg-color);
-            border-color: var(--text-main);
-        }
-
-        /* Animasyonlar */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mobil Cihazlar İçin İnce Ayarlar */
-        @media (max-width: 768px) {
-            .header-section h1 { font-size: 2rem; }
-            .project-card { padding: 30px 20px; }
-            .projects-grid { gap: 20px; }
-            .profile-img-placeholder { width: 110px; height: 110px; }
-        }
+        /* Webkit scrollbar gizleme/düzenleme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
     </style>
 </head>
-<body>
+<body class="text-white antialiased selection:bg-blue-500/30 selection:text-white min-h-screen flex flex-col">
 
-    <div class="header-section">
+    <!-- HEADER / PROFILE SECTİON -->
+    <header class="pt-24 pb-16 px-6 relative z-10 flex flex-col items-center text-center container mx-auto">
         
-        <img src="https://github.com/buraktonoz.png" alt="Burak Tonoz" class="profile-img-placeholder">
-        
-        <h1>Burak Tonoz</h1>
-        <p>Harita Mühendisi & Program Geliştirici</p>
-        
-        <div class="social-links">
-            <a href="https://github.com/buraktonoz" target="_blank" title="GitHub Profilim"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/buraktonoz?igsh=MW80enM0MW44ZWE1aw%3D%3D&utm_source=qr" target="_blank" title="Instagram Profilim"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:buraktonoz@gmail.com" title="Bana Ulaşın"><i class="fas fa-envelope"></i></a>
-        </div>
-    </div>
-
-    <div class="projects-grid">
-        
-        <div class="project-card">
-            <div>
-                <i class="fas fa-file-pdf card-icon"></i>
-                <h2>BELTAŞ İzin Formu</h2>
-                <p>Personel izin süreçlerini dijitalleştiren, hızlı veri girişi sağlayıp anında resmi PDF çıktısı üreten akıllı kurum içi web uygulaması.</p>
-            </div>
-            <a href="/izinformu/" class="btn">
-                Projeyi İncele <i class="fas fa-arrow-right"></i>
-            </a>
+        <!-- Profil Fotoğrafı ve Işıltısı -->
+        <div class="relative mb-8 group cursor-pointer">
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+            <img src="https://github.com/buraktonoz.png" alt="Burak Tonoz" class="relative w-32 h-32 rounded-full border border-white/10 object-cover shadow-2xl transition-transform duration-500 group-hover:scale-105">
         </div>
 
-        <div class="project-card">
-            <div>
-                <i class="fas fa-comments card-icon" style="color: #8b5cf6;"></i>
-                <h2>Federal Chat App</h2>
-                <p>Kullanıcıların anında iletişim kurmasını sağlayan, modern arayüzlü ve gerçek zamanlı (real-time) mesajlaşma platformu altyapısı.</p>
-            </div>
-            <a href="/federal-chat-app/" class="btn">
-                Sohbete Katıl <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
+        <!-- İsim ve Unvan (Geist Mono stili degrade yazı) -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent">
+            Burak Tonoz
+        </h1>
+        <p class="text-lg md:text-xl font-medium tracking-tight text-gray-400 max-w-2xl">
+            Harita Mühendisi & <span class="text-gray-300">Program Geliştirici</span>
+        </p>
 
-        <div class="project-card">
-            <div>
-                <i class="fas fa-map-marked-alt card-icon" style="color: #10b981;"></i>
-                <h2>GeoITRF</h2>
-                <p>Canlı GPS konumunu ITRF koordinatlarına dönüştürüp kaydeden, profesyonel saha veri toplama ve uydu haritası terminali.</p>
-            </div>
-            <a href="/GeoITRF/" class="btn">
-                Haritayı Aç <i class="fas fa-arrow-right"></i>
-            </a>
+        <!-- Sosyal Medya İkonları -->
+        <div class="mt-8 flex gap-6">
+            <a href="https://github.com/buraktonoz" target="_blank" class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-300 text-2xl"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/buraktonoz?igsh=MW80enM0MW44ZWE1aw%3D%3D&utm_source=qr" target="_blank" class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:buraktonoz@gmail.com" class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-300 text-2xl"><i class="fas fa-envelope"></i></a>
         </div>
-        
-        <div class="project-card">
-            <div>
-                <i class="fas fa-file-signature card-icon" style="color: #0ea5e9;"></i>
-                <h2>Numarataj Pro</h2>
-                <p>Hazır evrak şablonlarını bir arada tutan, resmi yazışmaları hızlandırmak ve kolaylaştırmak için tasarlanmış pratik belge oluşturma aracı.</p>
-            </div>
-            <a href="https://buraktonoz.com/Numarataj-Pro/" class="btn">
-                Projeyi İncele <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
+    </header>
 
-        <div class="project-card">
-            <div>
-                <i class="fas fa-wave-square card-icon" style="color: #f59e0b;"></i>
-                <h2>Morsify</h2>
-                <p>Metinleri Mors alfabesine, Mors kodlarını ise anında metne dönüştüren pratik ve modern çeviri aracı.</p>
-            </div>
-            <a href="/Morsify/" class="btn">
-                Uygulamayı Aç <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
+    <!-- BENTO GRID PROJECTS SECTION -->
+    <main class="container mx-auto px-6 pb-32 max-w-6xl">
+        <!-- Izgara Yapısı -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[auto]">
 
-        <div class="project-card">
-            <div>
-                <i class="fas fa-record-vinyl card-icon" style="color: #ec4899;"></i>
-                <h2>PlakTon</h2>
-                <p>Dokunmatik yüzey, manyetik NFC disketler ve Spotify entegrasyonuna sahip modern nesil dijital plak çalar.</p>
-            </div>
-            <a href="https://buraktonoz.com/PlakTon/" class="btn">
-                Projeyi İncele <i class="fas fa-arrow-right"></i>
+            <!-- 1. PLAKTON (Büyük Kart: 2 Sütun, 2 Satır Kaplar) -->
+            <a href="https://buraktonoz.com/PlakTon/" target="_blank" class="group relative flex flex-col overflow-hidden rounded-3xl bg-black border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(236,72,153,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(236,72,153,0.2)] hover:-translate-y-1 p-8 md:col-span-2 md:row-span-2 min-h-[300px] md:min-h-[500px]">
+                <!-- Arkaplan İkonu -->
+                <i class="fas fa-record-vinyl absolute -right-12 -top-12 text-[200px] text-white/5 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[30deg]"></i>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 z-0"></div>
+                <!-- İçerik -->
+                <div class="relative z-10 flex flex-col h-full justify-end">
+                    <span class="text-pink-400 text-sm font-mono tracking-widest uppercase mb-3">IoT & Donanım</span>
+                    <h2 class="text-3xl font-semibold text-gray-100 mb-3 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">PlakTon</h2>
+                    <p class="text-base text-gray-400 leading-relaxed max-w-sm mb-6">
+                        Dokunmatik yüzey, manyetik NFC disketler, ESP32 ve Spotify entegrasyonuna sahip modern nesil dijital plak çalar. 3D baskı ve özel elektronik devre tasarımı ile üretildi.
+                    </p>
+                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors">
+                        Projeyi İncele <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
             </a>
-        </div>
 
-    </div>
+            <!-- 2. PAYTAK (Yeni - 2 Sütun) -->
+            <a href="https://buraktonoz.com/PayTak/" target="_blank" class="group relative flex flex-col overflow-hidden rounded-3xl bg-black border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(250,204,21,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(250,204,21,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]">
+                <i class="fas fa-ghost absolute -right-4 -bottom-4 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
+                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
+                <div class="relative z-10 flex flex-col h-full justify-center">
+                    <span class="text-yellow-400 text-sm font-mono tracking-widest uppercase mb-2">Oyun & Eğlence</span>
+                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">PayTak</h2>
+                    <p class="text-sm text-gray-400 max-w-md mb-4">
+                        Masaüstünüzde yaşayan, besleyip ilgilenebileceğiniz sevimli sanal bebek (tamagotchi) uygulaması.
+                    </p>
+                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
+                        Oyuna Git <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 3. NUMARATAJ PRO (2 Sütun) -->
+            <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" class="group relative flex flex-col overflow-hidden rounded-3xl bg-black border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(14,165,233,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(14,165,233,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]">
+                <i class="fas fa-file-signature absolute -right-2 -top-8 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"></i>
+                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
+                <div class="relative z-10 flex flex-col h-full justify-center">
+                    <span class="text-sky-400 text-sm font-mono tracking-widest uppercase mb-2">Kurumsal Web Aracı</span>
+                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">Numarataj Pro</h2>
+                    <p class="text-sm text-gray-400 max-w-md mb-4">
+                        Resmi yazışmaları hızlandıran, hazır evrak şablonlarını yöneten ve Firebase veritabanı destekli pratik belge oluşturma sistemi.
+                    </p>
+                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
+                        Sistemi İncele <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 4. GEOITRF (2 Sütun) -->
+            <a href="/GeoITRF/" class="group relative flex flex-col overflow-hidden rounded-3xl bg-black border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(16,185,129,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(16,185,129,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]">
+                <i class="fas fa-map-marked-alt absolute -right-4 -bottom-4 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 z-0"></div>
+                <div class="relative z-10 flex flex-col h-full justify-end">
+                    <span class="text-emerald-400 text-sm font-mono tracking-widest uppercase mb-2">GIS & Haritacılık</span>
+                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">GeoITRF</h2>
+                    <p class="text-sm text-gray-400 max-w-md mb-4">
+                        Canlı GPS konumunu ITRF koordinatlarına dönüştürüp kaydeden profesyonel saha veri toplama terminali.
+                    </p>
+                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors">
+                        Haritayı Aç <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 5. FEDERAL CHAT APP (2 Sütun) -->
+            <a href="/federal-chat-app/" class="group relative flex flex-col overflow-hidden rounded-3xl bg-black border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(139,92,246,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(139,92,246,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]">
+                <i class="fas fa-comments absolute -right-2 top-0 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 z-0"></div>
+                <div class="relative z-10 flex flex-col h-full justify-end">
+                    <span class="text-violet-400 text-sm font-mono tracking-widest uppercase mb-2">Real-Time İletişim</span>
+                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">Federal Chat</h2>
+                    <p class="text-sm text-gray-400 max-w-md mb-4">
+                        Kullanıcıların anında iletişim kurmasını sağlayan, modern arayüzlü ve gerçek zamanlı mesajlaşma altyapısı.
+                    </p>
+                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors">
+                        Sohbete Katıl <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 6. BELTAŞ İZİN FORMU (2 Sütun) -->
+            <a href="/izinformu/" class="group relative flex flex-col overflow-hidden rounded-3xl bg-black border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(248,113,113,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(248,113,113,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]">
+                <i class="fas fa-file-pdf absolute right-0 -bottom-8 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
+                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
+                <div class="relative z-10 flex flex-col h-full justify-center">
+                    <span class="text-red-400 text-sm font-mono tracking-widest uppercase mb-2">Otomasyon</span>
+                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">BELTAŞ İzin Formu</h2>
+                    <p class="text-sm text-gray-400 max-w-md mb-4">
+                        Personel izin süreçlerini dijitalleştiren, hızlı veri girişi sağlayıp anında resmi PDF çıktısı üreten akıllı kurum içi uygulama.
+                    </p>
+                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
+                        Uygulamayı Aç <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 7. MORSIFY (2 Sütun) -->
+            <a href="/Morsify/" class="group relative flex flex-col overflow-hidden rounded-3xl bg-black border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(249,115,22,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(249,115,22,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]">
+                <i class="fas fa-wave-square absolute -right-2 top-4 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
+                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
+                <div class="relative z-10 flex flex-col h-full justify-center">
+                    <span class="text-orange-400 text-sm font-mono tracking-widest uppercase mb-2">Araç / Utility</span>
+                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">Morsify</h2>
+                    <p class="text-sm text-gray-400 max-w-md mb-4">
+                        Metinleri Mors alfabesine, Mors kodlarını ise anında metne dönüştüren pratik ve modern çeviri aracı.
+                    </p>
+                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
+                        Çeviri Yap <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </main>
 
 </body>
 </html>
