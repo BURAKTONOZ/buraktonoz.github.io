@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Ana Portfolyo Siten -->
+  <url>
+    <loc>https://buraktonoz.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 1. PlakTon -->
+  <url>
+    <loc>https://buraktonoz.com/PlakTon/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 2. PayTak -->
+  <url>
+    <loc>https://buraktonoz.com/PayTak/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 3. Numarataj Pro -->
+  <url>
+    <loc>https://buraktonoz.com/Numarataj-Pro/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 4. GeoITRF -->
+  <url>
+    <loc>https://buraktonoz.com/GeoITRF/</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- 5. Federal Chat App -->
+  <url>
+    <loc>https://buraktonoz.com/federal-chat-app/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 6. BELTAŞ İzin Formu -->
+  <url>
+    <loc>https://buraktonoz.com/izinformu/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 7. Morsify -->
+  <url>
+    <loc>https://buraktonoz.com/Morsify/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+</urlset>
