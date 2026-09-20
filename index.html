@@ -6,6 +6,7 @@
     <meta name="description" content="Harita Mühendisi ve Program Geliştirici Burak Tonoz'un kişisel portfolyo ve proje vitrini.">
     <title>Burak Tonoz - Portfolio & Hub</title>
     
+    <!-- Sekme (Chrome) İkonu - GitHub'dan çekiliyor -->
     <link rel="icon" type="image/png" href="https://github.com/buraktonoz.png">
     <link rel="apple-touch-icon" href="https://github.com/buraktonoz.png">
     <meta name="theme-color" content="#09090b"> 
@@ -57,7 +58,7 @@
 </head>
 <body class="text-white antialiased selection:bg-blue-500/30 selection:text-white min-h-screen flex flex-col relative">
 
-    <!-- WebGL Arkaplan Canvases -->
+    <!-- WebGL Arkaplan Canvas -->
     <canvas id="neuro" class="fixed inset-0 w-full h-full pointer-events-none opacity-35 z-0"></canvas>
 
     <!-- HEADER / HERO & QUICK ACCESS HUB -->
@@ -70,7 +71,8 @@
                 
                 <div class="relative shrink-0">
                     <div class="absolute -inset-1.5 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-80 transition duration-500"></div>
-                    <img src="profil.jpg" alt="Burak Tonoz" class="relative w-32 h-32 md:w-36 md:h-36 rounded-2xl object-cover border border-white/20 shadow-xl">
+                    <!-- Profil Fotoğrafı - GitHub'dan çekiliyor (Sekme ikonu ile aynı) -->
+                    <img src="https://github.com/buraktonoz.png" alt="Burak Tonoz" class="relative w-32 h-32 md:w-36 md:h-36 rounded-2xl object-cover border border-white/20 shadow-xl">
                 </div>
 
                 <div class="flex flex-col text-center sm:text-left h-full justify-between">
@@ -113,7 +115,7 @@
                         <i class="fas fa-arrow-right text-[10px] text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all"></i>
                     </a>
 
-                    <!-- Personel Yönetim Sistemi (Yeni Eklendi) -->
+                    <!-- Personel Yönetim Sistemi -->
                     <a href="https://buraktonoz.com/personel/" target="_blank" class="group flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-purple-500/40 transition-all">
                         <div class="flex items-center gap-2.5">
                             <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs"><i class="fas fa-users-gear"></i></div>
@@ -171,7 +173,7 @@
                 <h2 class="text-xl font-bold text-white tracking-tight">Geliştirilen Projeler & Ürün Vitrini</h2>
                 <p class="text-xs text-gray-400 font-mono mt-0.5">Donanım, Web, GIS ve Otomasyon Sistemleri</p>
             </div>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-gray-300">7 Proje Aktif</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-gray-300">10 Proje Aktif</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -214,27 +216,46 @@
                 </div>
             </a>
 
-            <!-- 3. PAYTAK -->
-            <a href="https://buraktonoz.com/PayTak/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-yellow-500/40 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.3s;">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-bl-full pointer-events-none group-hover:bg-yellow-500/10 transition-all"></div>
+            <!-- 3. TONOZSHARE (YENİ EKLENDİ) -->
+            <a href="https://buraktonoz.com/share/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.3s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-500/10 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 text-[11px] font-mono border border-yellow-500/20">Oyun & Eğlence</span>
-                        <i class="fas fa-ghost text-xl text-yellow-400/60 group-hover:scale-110 transition-transform duration-500"></i>
+                        <span class="px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 text-[11px] font-mono border border-cyan-500/20">Veri Transferi</span>
+                        <i class="fas fa-share-nodes text-xl text-cyan-400/60 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-yellow-300 transition-colors">PayTak</h3>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors">TonozShare</h3>
                     <p class="text-xs text-gray-400 leading-relaxed mb-6">
-                        Masaüstünüzde yaşayan, besleyip ilgilenebileceğiniz sevimli sanal bebek (tamagotchi) masaüstü web simülasyon uygulaması.
+                        Hızlı, güvenli ve pratik dosya paylaşım programı. İhtiyaç duyduğunuz verileri herhangi bir kısıtlama olmadan web üzerinden aktarın.
                     </p>
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
-                    <span>Oyunu Başlat</span>
-                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-yellow-400 transition-all"></i>
+                    <span>Dosya Paylaş</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-cyan-400 transition-all"></i>
                 </div>
             </a>
 
-            <!-- 4. NUMARATAJ PRO -->
-            <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-sky-500/40 hover:shadow-[0_0_30px_rgba(14,165,233,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.35s;">
+            <!-- 4. EVRAK DAĞITIM SİSTEMİ (YENİ EKLENDİ) -->
+            <a href="https://buraktonoz.com/numarataj/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-amber-500/40 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.35s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none group-hover:bg-amber-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-amber-500/10 text-amber-400 text-[11px] font-mono border border-amber-500/20">Otomasyon</span>
+                        <i class="fas fa-scale-balanced text-xl text-amber-400/60 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-amber-300 transition-colors">Evrak Dağıtım</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Belediye iş akışları için özel geliştirilmiş, gelen resmi evrakları personeller arasında adaletli ve sıralı şekilde dağıtan akıllı numaratör sistemi.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Sistemi Aç</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-amber-400 transition-all"></i>
+                </div>
+            </a>
+
+            <!-- 5. NUMARATAJ PRO -->
+            <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-sky-500/40 hover:shadow-[0_0_30px_rgba(14,165,233,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.4s;">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-bl-full pointer-events-none group-hover:bg-sky-500/10 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -252,8 +273,27 @@
                 </div>
             </a>
 
-            <!-- 5. GEOITRF -->
-            <a href="https://buraktonoz.com/GeoITRF/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-emerald-500/40 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.4s;">
+            <!-- 6. PAYTAK -->
+            <a href="https://buraktonoz.com/PayTak/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-yellow-500/40 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.45s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-bl-full pointer-events-none group-hover:bg-yellow-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 text-[11px] font-mono border border-yellow-500/20">Oyun & Eğlence</span>
+                        <i class="fas fa-ghost text-xl text-yellow-400/60 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-yellow-300 transition-colors">PayTak</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Masaüstünüzde yaşayan, besleyip ilgilenebileceğiniz sevimli sanal bebek (tamagotchi) masaüstü web simülasyon uygulaması.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Oyunu Başlat</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-yellow-400 transition-all"></i>
+                </div>
+            </a>
+
+            <!-- 7. GEOITRF -->
+            <a href="https://buraktonoz.com/GeoITRF/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-emerald-500/40 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.5s;">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full pointer-events-none group-hover:bg-emerald-500/10 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
@@ -271,22 +311,60 @@
                 </div>
             </a>
 
-            <!-- 6. BELTAŞ İZİN FORMU -->
-            <a href="https://buraktonoz.com/izinformu/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-rose-500/40 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.45s;">
+            <!-- 8. BELTAŞ İZİN FORMU -->
+            <a href="https://buraktonoz.com/izinformu/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-rose-500/40 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.55s;">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-bl-full pointer-events-none group-hover:bg-rose-500/10 transition-all"></div>
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-lg bg-rose-500/10 text-rose-400 text-[11px] font-mono border border-rose-500/20">Otomasyon</span>
+                        <span class="px-3 py-1 rounded-lg bg-rose-500/10 text-rose-400 text-[11px] font-mono border border-rose-500/20">Kurum İçi</span>
                         <i class="fas fa-file-pdf text-xl text-rose-400/60 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-rose-300 transition-colors">BELTAŞ İzin Formu</h3>
                     <p class="text-xs text-gray-400 leading-relaxed mb-6">
-                        Personel izin süreçlerini dijitalleştirip hızlı veri girişi sağlayarak anında resmi PDF çıktısı üreten akıllı kurum içi uygulama.
+                        Personel izin süreçlerini dijitalleştirip hızlı veri girişi sağlayarak anında resmi PDF çıktısı üreten akıllı uygulama.
                     </p>
                 </div>
                 <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
                     <span>Formu Aç</span>
                     <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-rose-400 transition-all"></i>
+                </div>
+            </a>
+
+            <!-- 9. FEDERAL CHAT APP (GERİ EKLENDİ) -->
+            <a href="/federal-chat-app/" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-violet-500/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.6s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-bl-full pointer-events-none group-hover:bg-violet-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-violet-500/10 text-violet-400 text-[11px] font-mono border border-violet-500/20">Real-Time</span>
+                        <i class="fas fa-comments text-xl text-violet-400/60 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-violet-300 transition-colors">Federal Chat</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Kullanıcıların anında iletişim kurmasını sağlayan, modern arayüzlü ve gerçek zamanlı (Socket tabanlı) mesajlaşma altyapısı.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Sohbete Katıl</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-violet-400 transition-all"></i>
+                </div>
+            </a>
+
+            <!-- 10. MORSIFY (GERİ EKLENDİ) -->
+            <a href="/Morsify/" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-orange-500/40 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.65s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-bl-full pointer-events-none group-hover:bg-orange-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-orange-500/10 text-orange-400 text-[11px] font-mono border border-orange-500/20">Araç / Utility</span>
+                        <i class="fas fa-wave-square text-xl text-orange-400/60 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-orange-300 transition-colors">Morsify</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Standart metinleri Mors alfabesine, Mors kodlarını ise anında anlaşılır metne dönüştüren pratik ve modern çeviri aracı.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Çeviri Yap</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-orange-400 transition-all"></i>
                 </div>
             </a>
 
