@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harita Mühendisi ve Program Geliştirici Burak Tonoz'un kişisel portfolyo web sitesi. Geliştirdiğim projeleri inceleyebilir ve benimle iletişime geçebilirsiniz.">
-    <title>Burak Tonoz - Portfolio</title>
+    <meta name="description" content="Harita Mühendisi ve Program Geliştirici Burak Tonoz'un kişisel portfolyo ve proje vitrini.">
+    <title>Burak Tonoz - Portfolio & Hub</title>
     
     <link rel="icon" type="image/png" href="https://github.com/buraktonoz.png">
     <link rel="apple-touch-icon" href="https://github.com/buraktonoz.png">
@@ -45,9 +45,8 @@
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
 
-        /* Kutu Animasyonları */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-box {
@@ -58,241 +57,255 @@
 </head>
 <body class="text-white antialiased selection:bg-blue-500/30 selection:text-white min-h-screen flex flex-col relative">
 
-    <!-- Arkaplan Animasyonu İçin Canvas -->
-    <canvas id="neuro" class="fixed inset-0 w-full h-full pointer-events-none opacity-40 z-0"></canvas>
+    <!-- WebGL Arkaplan Canvases -->
+    <canvas id="neuro" class="fixed inset-0 w-full h-full pointer-events-none opacity-35 z-0"></canvas>
 
-    <!-- BENTO GRID: PROFİL VE KISAYOLLAR -->
-    <header class="container mx-auto px-6 pt-16 md:pt-24 pb-8 max-w-6xl relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 h-full">
+    <!-- HEADER / HERO & QUICK ACCESS HUB -->
+    <header class="container mx-auto px-6 pt-12 md:pt-20 pb-10 max-w-6xl relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             
-            <!-- 1. SOL KUTU: Profil, Bio ve Künyeler (2 Kolon) -->
-            <div class="animate-box lg:col-span-2 group relative flex flex-col sm:flex-row gap-6 lg:gap-8 overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(255,255,255,0.05)] transition-all duration-500 hover:border-white/20 p-6 md:p-8 h-full">
+            <!-- Profil Kartı (7 Kolon) -->
+            <div class="animate-box lg:col-span-7 flex flex-col sm:flex-row gap-6 items-center sm:items-start p-8 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-2xl relative overflow-hidden group">
+                <div class="absolute -right-20 -top-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-700"></div>
                 
-                <!-- Resim ve Sosyal Medya Grubu -->
-                <div class="flex flex-col items-center gap-4 shrink-0">
-                    <div class="relative">
-                        <div class="absolute -inset-2 bg-gradient-to-tr from-blue-600/30 to-emerald-600/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                        <img src="profil.jpg" alt="Burak Tonoz" class="relative w-32 h-32 md:w-36 md:h-36 rounded-2xl object-cover border border-white/10 shadow-2xl group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    
-                    <!-- Sosyal İkonlar -->
-                    <div class="flex items-center gap-2">
-                        <a href="https://github.com/buraktonoz" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all hover:-translate-y-1"><i class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/buraktonoz?igsh=MW80enM0MW44ZWE1aw%3D%3D&utm_source=qr" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-pink-400 hover:bg-white/10 transition-all hover:-translate-y-1"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:buraktonoz@gmail.com" class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-white/10 transition-all hover:-translate-y-1"><i class="fas fa-envelope"></i></a>
-                    </div>
+                <div class="relative shrink-0">
+                    <div class="absolute -inset-1.5 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-80 transition duration-500"></div>
+                    <img src="profil.jpg" alt="Burak Tonoz" class="relative w-32 h-32 md:w-36 md:h-36 rounded-2xl object-cover border border-white/20 shadow-xl">
                 </div>
-                
-                <!-- İsim, Hakkında ve Yetenek Künyeleri -->
-                <div class="flex-1 flex flex-col items-center sm:items-start text-center sm:text-left justify-between">
+
+                <div class="flex flex-col text-center sm:text-left h-full justify-between">
                     <div>
-                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-1 tracking-tight">Burak Tonoz</h1>
-                        <p class="text-sm md:text-base text-gray-400 font-medium mb-4">Harita Mühendisi & Program Geliştirici</p>
-                        <p class="text-sm text-gray-300 mb-6 leading-relaxed opacity-90">
-                            Elektronik donanım tasarımlarından (ESP32) 3D üretim teknolojilerine ve modern web mimarilerine kadar geniş bir yelpazede dijital çözümler üretiyorum. Kişiye ve ihtiyaca özel, sıfırdan yazılımlar geliştirebilirim. Aklınızda hayata geçirmeyi planladığınız bir program veya proje fikri varsa, benimle iletişime geçebilirsiniz.
+                        <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                            <h1 class="text-3xl font-bold tracking-tight text-white">Burak Tonoz</h1>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Online</span>
+                        </div>
+                        <p class="text-sm text-cyan-400 font-medium mb-3">Harita Mühendisi & Program Geliştirici</p>
+                        <p class="text-xs md:text-sm text-gray-300 leading-relaxed mb-4">
+                            GIS sistemleri, IoT donanımları, 3D üretim teknolojileri ve kurumsal web çözümleri tasarlayan yazılım ve mühendislik platformu.
                         </p>
                     </div>
-                    
-                    <!-- Künyeler (Etiketler) -->
-                    <div class="flex flex-wrap justify-center sm:justify-start gap-2 mt-auto">
-                        <span class="px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[11px] font-mono tracking-wide flex items-center gap-1.5"><i class="fas fa-map-marked-alt"></i> GIS & Numarataj</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300 text-[11px] font-mono tracking-wide flex items-center gap-1.5"><i class="fas fa-microchip"></i> IoT & ESP32</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-[11px] font-mono tracking-wide flex items-center gap-1.5"><i class="fas fa-layer-group"></i> Full-Stack Web</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-300 text-[11px] font-mono tracking-wide flex items-center gap-1.5"><i class="fas fa-cube"></i> 3D Üretim</span>
+
+                    <!-- Sosyal Medya Butonları -->
+                    <div class="flex items-center justify-center sm:justify-start gap-2.5">
+                        <a href="https://github.com/buraktonoz" target="_blank" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/buraktonoz" target="_blank" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-pink-400 hover:bg-white/10 hover:border-pink-500/30 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:buraktonoz@gmail.com" class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:bg-white/10 hover:border-cyan-500/30 transition-all"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. SAĞ KUTU: Kısayollar ve Uygulamalar Merkezi (1 Kolon) -->
-            <div class="animate-box lg:col-span-1 group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(6,182,212,0.05)] transition-all duration-500 hover:border-white/20 p-6 md:p-8 h-full" style="animation-delay: 0.1s;">
-                
-                <span class="text-white/50 text-[10px] font-mono tracking-widest uppercase mb-4 opacity-80 flex items-center gap-2">
-                    <i class="fas fa-rocket text-white/40"></i> Hızlı Erişim
-                </span>
-                
-                <div class="flex flex-col gap-2.5 mt-auto w-full">
-                    
-                    <!-- 1. TonozShare Kısayolu -->
-                    <a href="https://buraktonoz.com/share/" target="_blank" class="group/btn flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-cyan-500/30 transition-all">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shrink-0 shadow-lg group-hover/btn:shadow-[0_0_12px_rgba(6,182,212,0.6)] transition-all">
-                            <i class="fas fa-bolt text-white text-xs"></i>
+            <!-- Hızlı Erişim & Sistemler Hub (5 Kolon) -->
+            <div class="animate-box lg:col-span-5 flex flex-col p-6 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-2xl justify-between" style="animation-delay: 0.1s;">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-white/70 text-xs font-mono tracking-wider uppercase flex items-center gap-2">
+                        <i class="fas fa-terminal text-cyan-400"></i> Hızlı Komuta Merkezi
+                    </span>
+                    <span class="text-[10px] font-mono text-gray-500">Sistemler Aktif</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 overflow-y-auto max-h-[220px] pr-1">
+                    <!-- TonozShare -->
+                    <a href="https://buraktonoz.com/share/" target="_blank" class="group flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-cyan-500/40 transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs"><i class="fas fa-bolt"></i></div>
+                            <span class="text-xs font-medium text-gray-200 group-hover:text-white">TonozShare</span>
                         </div>
-                        <span class="text-sm font-medium text-white tracking-wide">TonozShare</span>
-                        <i class="fas fa-arrow-right text-[10px] text-gray-500 ml-auto opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 group-hover/btn:text-cyan-400 transition-all"></i>
+                        <i class="fas fa-arrow-right text-[10px] text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all"></i>
                     </a>
 
-                    <!-- 2. Evrak Dağıtım Sistemi Kısayolu -->
-                    <a href="https://buraktonoz.com/numarataj/" target="_blank" class="group/btn flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-amber-500/30 transition-all">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center shrink-0 shadow-lg group-hover/btn:shadow-[0_0_12px_rgba(245,158,11,0.6)] transition-all">
-                            <i class="fas fa-paper-plane text-white text-xs"></i>
+                    <!-- Personel Yönetim Sistemi (Yeni Eklendi) -->
+                    <a href="https://buraktonoz.com/personel/" target="_blank" class="group flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-purple-500/40 transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs"><i class="fas fa-users-gear"></i></div>
+                            <span class="text-xs font-medium text-gray-200 group-hover:text-white">Personel Yönetim</span>
                         </div>
-                        <span class="text-sm font-medium text-white tracking-wide">Evrak Dağıtım Sistemi</span>
-                        <i class="fas fa-arrow-right text-[10px] text-gray-500 ml-auto opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 group-hover/btn:text-amber-400 transition-all"></i>
+                        <i class="fas fa-arrow-right text-[10px] text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all"></i>
                     </a>
 
-                    <!-- 3. Numarataj Pro Kısayolu -->
-                    <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" class="group/btn flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-sky-500/30 transition-all">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-400 to-indigo-500 flex items-center justify-center shrink-0 shadow-lg group-hover/btn:shadow-[0_0_12px_rgba(56,189,248,0.6)] transition-all">
-                            <i class="fas fa-file-signature text-white text-xs"></i>
+                    <!-- Numarataj Pro -->
+                    <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" class="group flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-sky-500/40 transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center text-xs"><i class="fas fa-file-signature"></i></div>
+                            <span class="text-xs font-medium text-gray-200 group-hover:text-white">Numarataj Pro</span>
                         </div>
-                        <span class="text-sm font-medium text-white tracking-wide">Numarataj Pro</span>
-                        <i class="fas fa-arrow-right text-[10px] text-gray-500 ml-auto opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 group-hover/btn:text-sky-400 transition-all"></i>
+                        <i class="fas fa-arrow-right text-[10px] text-gray-500 group-hover:text-sky-400 group-hover:translate-x-1 transition-all"></i>
                     </a>
 
-                    <!-- 4. BELTAŞ İzin Formu Kısayolu -->
-                    <a href="https://buraktonoz.com/izinformu/" target="_blank" class="group/btn flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-red-400/30 transition-all">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-red-400 to-rose-600 flex items-center justify-center shrink-0 shadow-lg group-hover/btn:shadow-[0_0_12px_rgba(248,113,113,0.6)] transition-all">
-                            <i class="fas fa-file-pdf text-white text-xs"></i>
+                    <!-- Evrak Dağıtım -->
+                    <a href="https://buraktonoz.com/numarataj/" target="_blank" class="group flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-amber-500/40 transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs"><i class="fas fa-paper-plane"></i></div>
+                            <span class="text-xs font-medium text-gray-200 group-hover:text-white">Evrak Dağıtım</span>
                         </div>
-                        <span class="text-sm font-medium text-white tracking-wide">BELTAŞ İzin Formu</span>
-                        <i class="fas fa-arrow-right text-[10px] text-gray-500 ml-auto opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 group-hover/btn:text-red-400 transition-all"></i>
+                        <i class="fas fa-arrow-right text-[10px] text-gray-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
                     </a>
 
-                    <!-- 5. GeoITRF Kısayolu -->
-                    <a href="https://buraktonoz.com/GeoITRF/" target="_blank" class="group/btn flex items-center gap-3 p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-emerald-500/30 transition-all">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-400 to-teal-600 flex items-center justify-center shrink-0 shadow-lg group-hover/btn:shadow-[0_0_12px_rgba(52,211,153,0.6)] transition-all">
-                            <i class="fas fa-map-marked-alt text-white text-xs"></i>
+                    <!-- BELTAŞ İzin Formu -->
+                    <a href="https://buraktonoz.com/izinformu/" target="_blank" class="group flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-rose-500/40 transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center text-xs"><i class="fas fa-file-pdf"></i></div>
+                            <span class="text-xs font-medium text-gray-200 group-hover:text-white">BELTAŞ İzin Formu</span>
                         </div>
-                        <span class="text-sm font-medium text-white tracking-wide">GeoITRF</span>
-                        <i class="fas fa-arrow-right text-[10px] text-gray-500 ml-auto opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 group-hover/btn:text-emerald-400 transition-all"></i>
+                        <i class="fas fa-arrow-right text-[10px] text-gray-500 group-hover:text-rose-400 group-hover:translate-x-1 transition-all"></i>
                     </a>
 
+                    <!-- GeoITRF -->
+                    <a href="https://buraktonoz.com/GeoITRF/" target="_blank" class="group flex items-center justify-between p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-emerald-500/40 transition-all">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs"><i class="fas fa-map-marked-alt"></i></div>
+                            <span class="text-xs font-medium text-gray-200 group-hover:text-white">GeoITRF Terminal</span>
+                        </div>
+                        <i class="fas fa-arrow-right text-[10px] text-gray-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"></i>
+                    </a>
                 </div>
             </div>
 
         </div>
     </header>
 
-    <!-- BENTO GRID PROJECTS SECTION -->
-    <main class="container mx-auto px-6 pb-32 max-w-6xl relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[auto]">
+    <!-- MAIN PRODUCT SHOWCASE SECTION -->
+    <main class="container mx-auto px-6 pb-28 max-w-6xl relative z-10">
+        
+        <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+            <div>
+                <h2 class="text-xl font-bold text-white tracking-tight">Geliştirilen Projeler & Ürün Vitrini</h2>
+                <p class="text-xs text-gray-400 font-mono mt-0.5">Donanım, Web, GIS ve Otomasyon Sistemleri</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-gray-300">7 Proje Aktif</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <!-- 1. PLAKTON -->
-            <a href="https://buraktonoz.com/PlakTon/" target="_blank" class="animate-box group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(236,72,153,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(236,72,153,0.2)] hover:-translate-y-1 p-8 md:col-span-2 md:row-span-2 min-h-[300px] md:min-h-[500px]" style="animation-delay: 0.2s;">
-                <i class="fas fa-record-vinyl absolute -right-12 -top-12 text-[200px] text-white/5 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-[30deg]"></i>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 z-0"></div>
-                <div class="relative z-10 flex flex-col h-full justify-end">
-                    <span class="text-pink-400 text-sm font-mono tracking-widest uppercase mb-3">IoT & Donanım</span>
-                    <h2 class="text-3xl font-semibold text-gray-100 mb-3 bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">PlakTon</h2>
-                    <p class="text-base text-gray-400 leading-relaxed max-w-sm mb-6">
-                        Dokunmatik yüzey, manyetik NFC disketler, ESP32 ve Spotify entegrasyonuna sahip modern nesil dijital plak çalar. 3D baskı ve özel elektronik devre tasarımı ile üretildi.
-                    </p>
-                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors">
-                        Projeyi İncele <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+            <a href="https://buraktonoz.com/PlakTon/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-pink-500/40 hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.2s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-pink-500/5 rounded-bl-full pointer-events-none group-hover:bg-pink-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-pink-500/10 text-pink-400 text-[11px] font-mono border border-pink-500/20">IoT & Donanım</span>
+                        <i class="fas fa-record-vinyl text-xl text-pink-400/60 group-hover:rotate-45 transition-transform duration-500"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-pink-300 transition-colors">PlakTon</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Dokunmatik yüzey, NFC disketler, ESP32 ve Spotify entegrasyonuna sahip modern dijital plak çalar. 3D baskı ve özel elektronik devre tasarımı.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Projeyi İncele</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-pink-400 transition-all"></i>
                 </div>
             </a>
 
-            <!-- 2. PAYTAK -->
-            <a href="https://buraktonoz.com/PayTak/" target="_blank" class="animate-box group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(250,204,21,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(250,204,21,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]" style="animation-delay: 0.3s;">
-                <i class="fas fa-ghost absolute -right-4 -bottom-4 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
-                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
-                <div class="relative z-10 flex flex-col h-full justify-center">
-                    <span class="text-yellow-400 text-sm font-mono tracking-widest uppercase mb-2">Oyun & Eğlence</span>
-                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">PayTak</h2>
-                    <p class="text-sm text-gray-400 max-w-md mb-4">
-                        Masaüstünüzde yaşayan, besleyip ilgilenebileceğiniz sevimli sanal bebek (tamagotchi) uygulaması.
-                    </p>
-                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
-                        Oyuna Git <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+            <!-- 2. PERSONEL YÖNETİM SİSTEMİ -->
+            <a href="https://buraktonoz.com/personel/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-purple-500/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.25s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-bl-full pointer-events-none group-hover:bg-purple-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-400 text-[11px] font-mono border border-purple-500/20">Kurumsal Sistem</span>
+                        <i class="fas fa-users-gear text-xl text-purple-400/60 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">Personel Yönetim</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Kurum içi kadro, görev dağılımı ve operasyonel süreçleri optimize eden, modern arayüze sahip özel personel yönetim altyapısı.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Sisteme Git</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-purple-400 transition-all"></i>
                 </div>
             </a>
 
-            <!-- 3. NUMARATAJ PRO -->
-            <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" class="animate-box group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(14,165,233,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(14,165,233,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]" style="animation-delay: 0.4s;">
-                <i class="fas fa-file-signature absolute -right-2 -top-8 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"></i>
-                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
-                <div class="relative z-10 flex flex-col h-full justify-center">
-                    <span class="text-sky-400 text-sm font-mono tracking-widest uppercase mb-2">Kurumsal Web Aracı</span>
-                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">Numarataj Pro</h2>
-                    <p class="text-sm text-gray-400 max-w-md mb-4">
-                        Resmi yazışmaları hızlandıran, hazır evrak şablonlarını yöneten ve Firebase veritabanı destekli pratik belge oluşturma sistemi.
-                    </p>
-                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
-                        Sistemi İncele <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+            <!-- 3. PAYTAK -->
+            <a href="https://buraktonoz.com/PayTak/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-yellow-500/40 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.3s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-bl-full pointer-events-none group-hover:bg-yellow-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-yellow-500/10 text-yellow-400 text-[11px] font-mono border border-yellow-500/20">Oyun & Eğlence</span>
+                        <i class="fas fa-ghost text-xl text-yellow-400/60 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-yellow-300 transition-colors">PayTak</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Masaüstünüzde yaşayan, besleyip ilgilenebileceğiniz sevimli sanal bebek (tamagotchi) masaüstü web simülasyon uygulaması.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Oyunu Başlat</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-yellow-400 transition-all"></i>
                 </div>
             </a>
 
-            <!-- 4. GEOITRF -->
-            <a href="/GeoITRF/" class="animate-box group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(16,185,129,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(16,185,129,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]" style="animation-delay: 0.5s;">
-                <i class="fas fa-map-marked-alt absolute -right-4 -bottom-4 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 z-0"></div>
-                <div class="relative z-10 flex flex-col h-full justify-end">
-                    <span class="text-emerald-400 text-sm font-mono tracking-widest uppercase mb-2">GIS & Haritacılık</span>
-                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">GeoITRF</h2>
-                    <p class="text-sm text-gray-400 max-w-md mb-4">
-                        Canlı GPS konumunu ITRF koordinatlarına dönüştürüp kaydeden profesyonel saha veri toplama terminali.
-                    </p>
-                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors">
-                        Haritayı Aç <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+            <!-- 4. NUMARATAJ PRO -->
+            <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-sky-500/40 hover:shadow-[0_0_30px_rgba(14,165,233,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.35s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-bl-full pointer-events-none group-hover:bg-sky-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-sky-500/10 text-sky-400 text-[11px] font-mono border border-sky-500/20">Web Aracı</span>
+                        <i class="fas fa-file-signature text-xl text-sky-400/60 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-sky-300 transition-colors">Numarataj Pro</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Resmi yazışmaları hızlandıran, şablon yönetimi sağlayan ve Firebase tabanlı gerçek zamanlı pratik belge oluşturma aracı.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Sistemi İncele</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-sky-400 transition-all"></i>
                 </div>
             </a>
 
-            <!-- 5. FEDERAL CHAT APP -->
-            <a href="/federal-chat-app/" class="animate-box group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(139,92,246,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(139,92,246,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]" style="animation-delay: 0.6s;">
-                <i class="fas fa-comments absolute -right-2 top-0 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 z-0"></div>
-                <div class="relative z-10 flex flex-col h-full justify-end">
-                    <span class="text-violet-400 text-sm font-mono tracking-widest uppercase mb-2">Real-Time İletişim</span>
-                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">Federal Chat</h2>
-                    <p class="text-sm text-gray-400 max-w-md mb-4">
-                        Kullanıcıların anında iletişim kurmasını sağlayan, modern arayüzlü ve gerçek zamanlı mesajlaşma altyapısı.
-                    </p>
-                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors">
-                        Sohbete Katıl <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+            <!-- 5. GEOITRF -->
+            <a href="https://buraktonoz.com/GeoITRF/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-emerald-500/40 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.4s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full pointer-events-none group-hover:bg-emerald-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-[11px] font-mono border border-emerald-500/20">GIS & Harita</span>
+                        <i class="fas fa-map-marked-alt text-xl text-emerald-400/60 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-emerald-300 transition-colors">GeoITRF</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Canlı GPS konumunu ITRF koordinatlarına dönüştürüp kaydeden profesyonel saha veri toplama ve analiz terminali.
+                    </p>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Haritayı Aç</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-emerald-400 transition-all"></i>
                 </div>
             </a>
 
             <!-- 6. BELTAŞ İZİN FORMU -->
-            <a href="/izinformu/" class="animate-box group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(248,113,113,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(248,113,113,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]" style="animation-delay: 0.7s;">
-                <i class="fas fa-file-pdf absolute right-0 -bottom-8 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
-                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
-                <div class="relative z-10 flex flex-col h-full justify-center">
-                    <span class="text-red-400 text-sm font-mono tracking-widest uppercase mb-2">Otomasyon</span>
-                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">BELTAŞ İzin Formu</h2>
-                    <p class="text-sm text-gray-400 max-w-md mb-4">
-                        Personel izin süreçlerini dijitalleştiren, hızlı veri girişi sağlayıp anında resmi PDF çıktısı üreten akıllı kurum içi uygulama.
-                    </p>
-                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
-                        Uygulamayı Aç <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+            <a href="https://buraktonoz.com/izinformu/" target="_blank" class="animate-box group relative flex flex-col justify-between p-7 rounded-3xl bg-black/60 backdrop-blur-md border border-white/10 shadow-xl hover:border-rose-500/40 hover:shadow-[0_0_30px_rgba(244,63,94,0.15)] hover:-translate-y-1.5 transition-all duration-500" style="animation-delay: 0.45s;">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-bl-full pointer-events-none group-hover:bg-rose-500/10 transition-all"></div>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-rose-500/10 text-rose-400 text-[11px] font-mono border border-rose-500/20">Otomasyon</span>
+                        <i class="fas fa-file-pdf text-xl text-rose-400/60 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-rose-300 transition-colors">BELTAŞ İzin Formu</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        Personel izin süreçlerini dijitalleştirip hızlı veri girişi sağlayarak anında resmi PDF çıktısı üreten akıllı kurum içi uygulama.
+                    </p>
                 </div>
-            </a>
-
-            <!-- 7. MORSIFY -->
-            <a href="/Morsify/" class="animate-box group relative flex flex-col overflow-hidden rounded-3xl bg-black/60 backdrop-blur-sm border border-white/10 shadow-[inset_0_-20px_80px_-20px_rgba(249,115,22,0.05)] transition-all duration-500 hover:border-white/20 hover:shadow-[inset_0_-20px_80px_-20px_rgba(249,115,22,0.15)] hover:-translate-y-1 p-8 md:col-span-2 min-h-[240px]" style="animation-delay: 0.8s;">
-                <i class="fas fa-wave-square absolute -right-2 top-4 text-9xl text-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
-                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent opacity-90 z-0"></div>
-                <div class="relative z-10 flex flex-col h-full justify-center">
-                    <span class="text-orange-400 text-sm font-mono tracking-widest uppercase mb-2">Araç / Utility</span>
-                    <h2 class="text-2xl font-semibold text-gray-100 mb-2">Morsify</h2>
-                    <p class="text-sm text-gray-400 max-w-md mb-4">
-                        Metinleri Mors alfabesine, Mors kodlarını ise anında metne dönüştüren pratik ve modern çeviri aracı.
-                    </p>
-                    <div class="text-white/60 font-medium text-sm flex items-center gap-2 group-hover:text-white transition-colors mt-auto">
-                        Çeviri Yap <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
-                    </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5 text-xs font-medium text-gray-300 group-hover:text-white">
+                    <span>Formu Aç</span>
+                    <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1.5 group-hover:text-rose-400 transition-all"></i>
                 </div>
             </a>
 
         </div>
     </main>
 
-    <!-- WebGL Arkaplan Scripti -->
+    <!-- FOOTER -->
+    <footer class="mt-auto border-t border-white/10 bg-black/40 backdrop-blur-md py-6 text-center text-xs text-gray-500 relative z-10">
+        <p>&copy; 2026 Burak Tonoz. Tüm hakları saklıdır. Harita Mühendisi & Yazılım Geliştirici.</p>
+    </footer>
+
+    <!-- WebGL Arkaplan Optimizasyon & Script -->
     <script>
         (function() {
             const canvasEl = document.getElementById('neuro');
             if (!canvasEl) return;
 
             const gl = canvasEl.getContext('webgl') || canvasEl.getContext('experimental-webgl');
-            if (!gl) {
-                console.error('WebGL not supported');
-                return;
-            }
+            if (!gl) return;
 
             const vsSource = `
                 precision mediump float;
@@ -310,7 +323,6 @@
                 uniform float u_time;
                 uniform float u_ratio;
                 uniform vec2 u_pointer_position;
-                uniform float u_scroll_progress;
                 
                 vec2 rotate(vec2 uv, float th) {
                     return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
@@ -320,7 +332,7 @@
                     vec2 sine_acc = vec2(0.);
                     vec2 res = vec2(0.);
                     float scale = 8.;
-                    for (int j = 0; j < 15; j++) {
+                    for (int j = 0; j < 12; j++) {
                         uv = rotate(uv, 1.);
                         sine_acc = rotate(sine_acc, 1.);
                         vec2 layer = uv * scale + float(j) + sine_acc - t;
@@ -338,16 +350,15 @@
                     pointer.x *= u_ratio;
                     float p = clamp(length(pointer), 0., 1.);
                     p = .5 * pow(1. - p, 2.);
-                    float t = .001 * u_time;
+                    float t = .0008 * u_time;
                     vec3 color = vec3(0.);
                     float noise = neuro_shape(uv, t, p);
                     noise = 1.2 * pow(noise, 3.);
                     noise += pow(noise, 10.);
                     noise = max(.0, noise - .5);
                     noise *= (1. - length(vUv - .5));
-                    color = vec3(0.5, 0.15, 0.65);
-                    color = mix(color, vec3(0.02, 0.7, 0.9), 0.32 + 0.16 * sin(2.0 * u_scroll_progress + 1.2));
-                    color += vec3(0.15, 0.0, 0.6) * sin(2.0 * u_scroll_progress + 1.5);
+                    color = vec3(0.4, 0.1, 0.6);
+                    color = mix(color, vec3(0.02, 0.6, 0.9), 0.4);
                     color = color * noise;
                     gl_FragColor = vec4(color, noise);
                 }
@@ -382,7 +393,6 @@
             const uTime = gl.getUniformLocation(program, 'u_time');
             const uRatio = gl.getUniformLocation(program, 'u_ratio');
             const uPointerPosition = gl.getUniformLocation(program, 'u_pointer_position');
-            const uScrollProgress = gl.getUniformLocation(program, 'u_scroll_progress');
 
             let pointer = { x: 0, y: 0, tX: 0, tY: 0 };
 
@@ -399,12 +409,11 @@
 
             const render = () => {
                 const currentTime = performance.now();
-                pointer.x += (pointer.tX - pointer.x) * 0.2;
-                pointer.y += (pointer.tY - pointer.y) * 0.2;
+                pointer.x += (pointer.tX - pointer.x) * 0.15;
+                pointer.y += (pointer.tY - pointer.y) * 0.15;
                 
                 gl.uniform1f(uTime, currentTime);
                 gl.uniform2f(uPointerPosition, pointer.x / window.innerWidth, 1 - pointer.y / window.innerHeight);
-                gl.uniform1f(uScrollProgress, window.scrollY / (2 * window.innerHeight));
                 
                 gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
                 requestAnimationFrame(render);
@@ -412,17 +421,9 @@
 
             render();
 
-            const handleMouseMove = (e) => {
+            window.addEventListener('pointermove', (e) => {
                 pointer.tX = e.clientX;
                 pointer.tY = e.clientY;
-            };
-
-            window.addEventListener('pointermove', handleMouseMove);
-            window.addEventListener('touchmove', (e) => {
-                if (e.touches[0]) {
-                    pointer.tX = e.touches[0].clientX;
-                    pointer.tY = e.touches[0].clientY;
-                }
             });
         })();
     </script>
