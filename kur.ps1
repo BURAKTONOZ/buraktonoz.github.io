@@ -1,5 +1,8 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+# Önceki hatalı çalışmalardan kalan arka plan görevlerini temizle
+Get-EventSubscriber -ErrorAction SilentlyContinue | Where-Object { $_.SourceIdentifier -match "IndirmeEvent" } | Unregister-Event
+
 $devam =$true
 
 while ($devam) {
@@ -12,10 +15,10 @@ while ($devam) {
     Write-Host "     |_| \___/|_| \_|\___//____| " -ForegroundColor Cyan
     Write-Host "                                 " -ForegroundColor Cyan
     Write-Host " ==========================================" -ForegroundColor DarkGray
-    Write-Host "        MERKEZI KURULUM ASISTANI v3.1      " -ForegroundColor Yellow
+    Write-Host "        MERKEZI KURULUM ASISTANI v3.2      " -ForegroundColor Yellow
     Write-Host " ==========================================" -ForegroundColor DarkGray
     Write-Host ""
-    Write-Host " [ Lutfen bir islem secin ]`n" -Footer -ForegroundColor White
+    Write-Host " [ Lutfen bir islem secin ]`n" -ForegroundColor White
     
     Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "NPYS (Numarataj Personel) " -ForegroundColor White -NoNewline; Write-Host "(Masaustune Akilli Indirici)" -ForegroundColor DarkGray
     Write-Host "  [2] " -ForegroundColor DarkGray -NoNewline; Write-Host "TonoLink " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
@@ -31,7 +34,7 @@ while ($devam) {
             Write-Host ""
             Write-Host " [i] Uygulama Bilgileri:" -ForegroundColor Cyan
             Write-Host "     - Yazilim Adi : Numarataj Personel Yonetim Sistemi (NPYS)" -ForegroundColor White
-            Write-Host "     - Kaynak      : GitHub Releases (Son Surüm / Latest)" -ForegroundColor White
+            Write-Host "     - Kaynak      : GitHub Releases (Son Surum)" -ForegroundColor White
             Write-Host "     - Hedef       : Masaustu" -ForegroundColor White
             Write-Host ""
             Write-Host " [>] Baglanti kuruluyor ve dosya indiriliyor..." -ForegroundColor Yellow
@@ -43,24 +46,38 @@ while ($devam) {
             try {
                 $webClient = New-Object System.Net.WebClient
                 
-                # Konsol tabanlı akıcı dolum çubuğu için event
-                Register-ObjectEvent -InputObject $webClient -EventName DownloadProgressChanged -Action {
-                    $yuzde = $EventArgs.ProgressPercentage
+                # Yüzdeyi arka planda güvenle tutmak için değişken oluşturuyoruz
+                $syncHash = [hashtable]::Synchronized(@{ Yuzde = 0 })
+                
+                # Arka plan sadece sayıyı günceller, ekrana yazı YAZMAZ
+                $action = { $syncHash.Yuzde = $EventArgs.ProgressPercentage }
+                $job = Register-ObjectEvent -InputObject $webClient -EventName DownloadProgressChanged -SourceIdentifier "IndirmeEvent" -Action $action
+                
+                # İndirmeyi başlat
+                $task = $webClient.DownloadFileTaskAsync($indirmeLinki, $hedef)
+                
+                # Ekrana yazma işlemini ana döngü yapar (Yazılar birbirine girmez)
+                while (-not $task.IsCompleted) {
+                    $yuzde = $syncHash.Yuzde
                     $barUzunlugu = 30
                     $dolu = [math]::Floor($barUzunlugu * $yuzde / 100)
                     $bos = $barUzunlugu - $dolu
                     $bar = "[" + ("#" * $dolu) + ("-" * $bos) + "]"
                     
-                    # Satır üstüne yazarak akıcı ilerleme efekti verme
                     Write-Host -NoNewline "`r Indiriliyor... $bar$yuzde% " -ForegroundColor Cyan
-                } | Out-Null
-
-                $webClient.DownloadFileTaskAsync($indirmeLinki,$hedef).Wait()
+                    Start-Sleep -Milliseconds 50
+                }
                 
-                Unregister-Event -SourceIdentifier $webClient -ErrorAction SilentlyContinue
+                # İndirme bitince tam dolu barı göster ve temizle
+                Write-Host -NoNewline "`r Indiriliyor... [##############################] 100% " -ForegroundColor Cyan
                 Write-Host ""
+                
+                Unregister-Event -SourceIdentifier "IndirmeEvent" -ErrorAction SilentlyContinue
+                $webClient.Dispose()
+                
                 Write-Host " [+] Islem Basarili! NPYS.exe basariyla masaustune kaydedildi." -ForegroundColor Green
             } catch {
+                Unregister-Event -SourceIdentifier "IndirmeEvent" -ErrorAction SilentlyContinue
                 Write-Host ""
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
                 Write-Host "     Hata Detayi: $($_.Exception.Message)" -ForegroundColor DarkGray
@@ -73,7 +90,7 @@ while ($devam) {
         '2' { Write-Host " [!] TonoLink modulu henuz aktif degil." -ForegroundColor DarkGray; Start-Sleep -Seconds 2 }
         '3' { Write-Host " [!] PayTak modulu henuz aktif degil." -ForegroundColor DarkGray; Start-Sleep -Seconds 2 }
         '4' {
-            $altDevam = $true
+            $altDevam =$true
             while ($altDevam) {
                 Clear-Host
                 Write-Host " ==========================================" -ForegroundColor DarkGray
@@ -89,36 +106,11 @@ while ($devam) {
                 $altSecim = Read-Host "  > Seciminiz (1-5 veya B)"
 
                 switch ($altSecim) {
-                    '1' {
-                        Write-Host " [>] Google Chrome kuruluyor..." -ForegroundColor Cyan
-                        winget install --id Google.Chrome -e --silent --accept-package-agreements --accept-source-agreements
-                        Write-Host " [+] Chrome kuruldu!" -ForegroundColor Green
-                        Start-Sleep -Seconds 2
-                    }
-                    '2' {
-                        Write-Host " [>] Microsoft Office kuruluyor..." -ForegroundColor Cyan
-                        winget install --id Microsoft.Office -e --silent --accept-package-agreements --accept-source-agreements
-                        Write-Host " [+] Office kuruldu!" -ForegroundColor Green
-                        Start-Sleep -Seconds 2`
-                    }
-                    '3' {
-                        Write-Host " [>] WinRAR kuruluyor..." -ForegroundColor Cyan
-                        winget install --id RARLab.WinRAR -e --silent --accept-package-agreements --accept-source-agreements
-                        Write-Host " [+] WinRAR kuruldu!" -ForegroundColor Green
-                        Start-Sleep -Seconds 2
-                    }
-                    '4' {
-                        Write-Host " [>] VS Code kuruluyor..." -ForegroundColor Cyan
-                        winget install --id Microsoft.VisualStudioCode -e --silent --accept-package-agreements
-                        Write-Host " [+] VS Code kuruldu!" -ForegroundColor Green
-                        Start-Sleep -Seconds 2
-                    }
-                    '5' {
-                        Write-Host " [>] Node.js kuruluyor..." -ForegroundColor Cyan
-                        winget install --id OpenJS.NodeJS -e --silent --accept-package-agreements
-                        Write-Host " [+] Node.js kuruldu!" -ForegroundColor Green
-                        Start-Sleep -Seconds 2
-                    }
+                    '1' { Write-Host " [>] Google Chrome kuruluyor..." -ForegroundColor Cyan; winget install --id Google.Chrome -e --silent --accept-package-agreements --accept-source-agreements; Write-Host " [+] Chrome kuruldu!" -ForegroundColor Green; Start-Sleep -Seconds 2 }
+                    '2' { Write-Host " [>] Microsoft Office kuruluyor..." -ForegroundColor Cyan; winget install --id Microsoft.Office -e --silent --accept-package-agreements --accept-source-agreements; Write-Host " [+] Office kuruldu!" -ForegroundColor Green; Start-Sleep -Seconds 2 }
+                    '3' { Write-Host " [>] WinRAR kuruluyor..." -ForegroundColor Cyan; winget install --id RARLab.WinRAR -e --silent --accept-package-agreements --accept-source-agreements; Write-Host " [+] WinRAR kuruldu!" -ForegroundColor Green; Start-Sleep -Seconds 2 }
+                    '4' { Write-Host " [>] VS Code kuruluyor..." -ForegroundColor Cyan; winget install --id Microsoft.VisualStudioCode -e --silent --accept-package-agreements; Write-Host " [+] VS Code kuruldu!" -ForegroundColor Green; Start-Sleep -Seconds 2 }
+                    '5' { Write-Host " [>] Node.js kuruluyor..." -ForegroundColor Cyan; winget install --id OpenJS.NodeJS -e --silent --accept-package-agreements; Write-Host " [+] Node.js kuruldu!" -ForegroundColor Green; Start-Sleep -Seconds 2 }
                     'B' { $altDevam =$false }
                     Default { Write-Host " [!] Hatali secim!" -ForegroundColor Red; Start-Sleep -Seconds 1 }
                 }
