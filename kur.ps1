@@ -37,7 +37,7 @@ while ($devam) {
             $indirmeLinki = "https://buraktonoz.com/TonoLink.exe"
             
             try {
-                Invoke-WebRequest -Uri $indirmeLinki -OutFile$hedef -UseBasicParsing -ErrorAction Stop
+                Invoke-WebRequest -Uri $indirmeLinki -OutFile $hedef -UseBasicParsing -ErrorAction Stop
                 Write-Host " [+] Islem Basarili! TonoLink (Gercek .exe) masaustune kaydedildi." -ForegroundColor Green
             } catch {
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
