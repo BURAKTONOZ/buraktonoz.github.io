@@ -1,16 +1,19 @@
-$devam = $true
+# İnternet bağlantısı için modern güvenlik protokolünü zorla (Drive hatasını çözer)
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+$devam =$true
 
 while ($devam) {
     Clear-Host
     Write-Host ""
-    Write-Host "  ██████╗ ██╗   ██╗██████╗  █████╗ ██╗  ██╗" -ForegroundColor Cyan
-    Write-Host "  ██╔══██╗██║   ██║██╔══██╗██╔══██╗██║ ██╔╝" -ForegroundColor Cyan
-    Write-Host "  ██████╔╝██║   ██║██████╔╝███████║█████╔╝ " -ForegroundColor Cyan
-    Write-Host "  ██╔══██╗██║   ██║██╔══██╗██╔══██║██╔═██╗ " -ForegroundColor DarkCyan
-    Write-Host "  ██████╔╝╚██████╔╝██║  ██║██║  ██║██║  ██╗" -ForegroundColor DarkCyan
-    Write-Host "  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝" -ForegroundColor DarkCyan
+    Write-Host "  ____                  _      " -ForegroundColor Cyan
+    Write-Host " | __ ) _   _ _ __ __ _| | __  " -ForegroundColor Cyan
+    Write-Host " |  _ \| | | | '__/ _\` | |/ /  " -ForegroundColor Cyan
+    Write-Host " | |_) | |_| | | | (_| |   <   " -ForegroundColor Cyan
+    Write-Host " |____/ \__,_|_|  \__,_|_|\_\  " -ForegroundColor Cyan
+    Write-Host "                               " -ForegroundColor Cyan
     Write-Host " ==========================================" -ForegroundColor DarkGray
-    Write-Host "        MERKEZI KURULUM ASISTANI v1.0      " -ForegroundColor Yellow
+    Write-Host "        MERKEZI KURULUM ASISTANI v1.1      " -ForegroundColor Yellow
     Write-Host " ==========================================" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host " [ Lutfen bir islem secin ]`n" -ForegroundColor White
@@ -34,10 +37,11 @@ while ($devam) {
             $driveLink = "https://drive.google.com/uc?export=download&id=1jo9eSMdnBn0yXRIe7UvzP2O5nEllNNVt"
             
             try {
-                Invoke-WebRequest -Uri $driveLink -OutFile$hedef -UseBasicParsing
+                Invoke-WebRequest -Uri $driveLink -OutFile$hedef -UseBasicParsing -ErrorAction Stop
                 Write-Host " [+] Islem Basarili! TonoLink masaustune kaydedildi." -ForegroundColor Green
             } catch {
-                Write-Host " [-] Indirme basarisiz oldu. Internet baglantinizi kontrol edin." -ForegroundColor Red
+                Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
+                Write-Host "     Hata Detayi: $($_.Exception.Message)" -ForegroundColor DarkGray
             }
             
             Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
