@@ -1,24 +1,22 @@
-# İnternet bağlantısı için modern güvenlik protokolünü zorla (Drive hatasını çözer)
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$devam =$true
+$devam = $true
 
 while ($devam) {
     Clear-Host
     Write-Host ""
-    Write-Host "  ____                  _      " -ForegroundColor Cyan
-    Write-Host " | __ ) _   _ _ __ __ _| | __  " -ForegroundColor Cyan
-    Write-Host " |  _ \| | | | '__/ _\` | |/ /  " -ForegroundColor Cyan
-    Write-Host " | |_) | |_| | | | (_| |   <   " -ForegroundColor Cyan
-    Write-Host " |____/ \__,_|_|  \__,_|_|\_\  " -ForegroundColor Cyan
-    Write-Host "                               " -ForegroundColor Cyan
+    Write-Host "   _____ ___  _   _  ___  _____ " -ForegroundColor Cyan
+    Write-Host "  |_   _/ _ \| \ | |/ _ \|__  / " -ForegroundColor Cyan
+    Write-Host "    | || | | |  \| | | | | / /  " -ForegroundColor Cyan
+    Write-Host "    | || |_| | |\  | |_| |/ /_  " -ForegroundColor Cyan
+    Write-Host "    |_| \___/|_| \_|\___//____| " -ForegroundColor Cyan
+    Write-Host "                                " -ForegroundColor Cyan
     Write-Host " ==========================================" -ForegroundColor DarkGray
-    Write-Host "        MERKEZI KURULUM ASISTANI v1.1      " -ForegroundColor Yellow
+    Write-Host "        MERKEZI KURULUM ASISTANI v1.3      " -ForegroundColor Yellow
     Write-Host " ==========================================" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host " [ Lutfen bir islem secin ]`n" -ForegroundColor White
     
-    # Menü Seçenekleri
     Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "TonoLink " -ForegroundColor White -NoNewline; Write-Host "(Masaustune Indir)" -ForegroundColor DarkGray
     Write-Host "  [2] " -ForegroundColor Green -NoNewline; Write-Host "NPYS     " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
     Write-Host "  [3] " -ForegroundColor Green -NoNewline; Write-Host "PayTak   " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
@@ -29,7 +27,7 @@ while ($devam) {
     Write-Host "`n ==========================================" -ForegroundColor DarkGray
 
     switch ($secim) {
-             '1' {
+        '1' {
             Write-Host " [>] TonoLink.exe indiriliyor, lutfen bekleyin..." -ForegroundColor Yellow
             
             $masaustu = [Environment]::GetFolderPath("Desktop")
@@ -37,7 +35,7 @@ while ($devam) {
             $driveLink = "https://drive.google.com/uc?export=download&id=1jo9eSMdnBn0yXRIe7UvzP2O5nEllNNVt"
             
             try {
-                Invoke-WebRequest -Uri $driveLink -OutFile $hedef -UseBasicParsing -ErrorAction Stop
+                Invoke-WebRequest -Uri $driveLink -OutFile$hedef -UseBasicParsing -ErrorAction Stop
                 Write-Host " [+] Islem Basarili! TonoLink masaustune kaydedildi." -ForegroundColor Green
             } catch {
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
@@ -45,12 +43,7 @@ while ($devam) {
             }
             
             Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
-            Read-Host
-        }
-
-            
-            Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
-            Read-Host
+            $null = Read-Host
         }
         
         '2' {
@@ -78,7 +71,7 @@ while ($devam) {
             Write-Host " [+] Tum gelistirici araclari basariyla kuruldu!" -ForegroundColor Green
             
             Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
-            Read-Host
+            $null = Read-Host
         }
         
         'Q' {
