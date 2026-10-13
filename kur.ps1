@@ -35,7 +35,7 @@ while ($devam) {
             $driveLink = "https://drive.google.com/uc?export=download&id=1jo9eSMdnBn0yXRIe7UvzP2O5nEllNNVt"
             
             try {
-                Invoke-WebRequest -Uri $driveLink -OutFile$hedef -UseBasicParsing -ErrorAction Stop
+                Invoke-WebRequest -Uri $driveLink -OutFile $hedef -UseBasicParsing -ErrorAction Stop
                 Write-Host " [+] Islem Basarili! TonoLink masaustune kaydedildi." -ForegroundColor Green
             } catch {
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
