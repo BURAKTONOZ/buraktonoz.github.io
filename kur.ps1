@@ -1,27 +1,33 @@
-[console]::OutputEncoding = [System.Text.Encoding]::UTF8
-
 $devam = $true
 
 while ($devam) {
     Clear-Host
-    Write-Host "=========================================================" -ForegroundColor Cyan
-    Write-Host "       BURAK TONOZ - MERKEZİ KURULUM ASİSTANI            " -ForegroundColor Yellow
-    Write-Host "=========================================================" -ForegroundColor Cyan
-    Write-Host " Lütfen indirmek veya kurmak istediğiniz aracı seçin:`n" -ForegroundColor White
+    Write-Host ""
+    Write-Host "  ██████╗ ██╗   ██╗██████╗  █████╗ ██╗  ██╗" -ForegroundColor Cyan
+    Write-Host "  ██╔══██╗██║   ██║██╔══██╗██╔══██╗██║ ██╔╝" -ForegroundColor Cyan
+    Write-Host "  ██████╔╝██║   ██║██████╔╝███████║█████╔╝ " -ForegroundColor Cyan
+    Write-Host "  ██╔══██╗██║   ██║██╔══██╗██╔══██║██╔═██╗ " -ForegroundColor DarkCyan
+    Write-Host "  ██████╔╝╚██████╔╝██║  ██║██║  ██║██║  ██╗" -ForegroundColor DarkCyan
+    Write-Host "  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝" -ForegroundColor DarkCyan
+    Write-Host " ==========================================" -ForegroundColor DarkGray
+    Write-Host "        MERKEZI KURULUM ASISTANI v1.0      " -ForegroundColor Yellow
+    Write-Host " ==========================================" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host " [ Lutfen bir islem secin ]`n" -ForegroundColor White
     
     # Menü Seçenekleri
-    Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "TonoLink (Masaüstüne İndir)"
-    Write-Host "  [2] " -ForegroundColor DarkGray -NoNewline; Write-Host "NPYS Kurulumu (Yakında...)"
-    Write-Host "  [3] " -ForegroundColor DarkGray -NoNewline; Write-Host "PayTak Kurulumu (Yakında...)"
-    Write-Host "  [4] " -ForegroundColor Yellow -NoNewline; Write-Host "Geliştirici Araçları (Chrome, VS Code, Node.js)"
-    Write-Host "  [Q] " -ForegroundColor Red -NoNewline; Write-Host "Çıkış`n"
+    Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "TonoLink " -ForegroundColor White -NoNewline; Write-Host "(Masaustune Indir)" -ForegroundColor DarkGray
+    Write-Host "  [2] " -ForegroundColor Green -NoNewline; Write-Host "NPYS     " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
+    Write-Host "  [3] " -ForegroundColor Green -NoNewline; Write-Host "PayTak   " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
+    Write-Host "  [4] " -ForegroundColor Yellow -NoNewline; Write-Host "Gelistirici Araclari " -ForegroundColor White -NoNewline; Write-Host "(Chrome, VS Code, Node.js)" -ForegroundColor DarkGray
+    Write-Host "  [Q] " -ForegroundColor Red -NoNewline; Write-Host "Cikis`n" -ForegroundColor White
     
-    $secim = Read-Host "Seçiminiz (1/2/3/4/Q)"
-    Write-Host "`n=========================================================" -ForegroundColor Cyan
+    $secim = Read-Host "  > Seciminiz (1-4 veya Q)"
+    Write-Host "`n ==========================================" -ForegroundColor DarkGray
 
     switch ($secim) {
         '1' {
-            Write-Host "[>] TonoLink.exe Drive'dan masaüstüne indiriliyor..." -ForegroundColor Yellow
+            Write-Host " [>] TonoLink.exe indiriliyor, lutfen bekleyin..." -ForegroundColor Yellow
             
             $masaustu = [Environment]::GetFolderPath("Desktop")
             $hedef = "$masaustu\TonoLink.exe"
@@ -29,27 +35,27 @@ while ($devam) {
             
             try {
                 Invoke-WebRequest -Uri $driveLink -OutFile$hedef -UseBasicParsing
-                Write-Host "[+] İşlem Başarılı! TonoLink masaüstünüze eklendi." -ForegroundColor Green
+                Write-Host " [+] Islem Basarili! TonoLink masaustune kaydedildi." -ForegroundColor Green
             } catch {
-                Write-Host "[-] İndirme başarısız oldu. İnternet bağlantınızı kontrol edin." -ForegroundColor Red
+                Write-Host " [-] Indirme basarisiz oldu. Internet baglantinizi kontrol edin." -ForegroundColor Red
             }
             
-            Write-Host "`nMenüye dönmek için Enter'a basın..." -ForegroundColor White
+            Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
             Read-Host
         }
         
         '2' {
-            Write-Host "[!] NPYS modülü henüz eklenmedi. Daha sonra Drive linkini buraya gireceksin." -ForegroundColor DarkGray
+            Write-Host " [!] NPYS modulu henuz aktif degil." -ForegroundColor DarkGray
             Start-Sleep -Seconds 2
         }
         
         '3' {
-            Write-Host "[!] PayTak modülü henüz eklenmedi." -ForegroundColor DarkGray
+            Write-Host " [!] PayTak modulu henuz aktif degil." -ForegroundColor DarkGray
             Start-Sleep -Seconds 2
         }
 
         '4' {
-            Write-Host "[>] Geliştirici ortamı hazırlanıyor, lütfen bekleyin..." -ForegroundColor Magenta
+            Write-Host " [>] Gelistirici ortami hazirlaniyor..." -ForegroundColor Magenta
             
             Write-Host "  [*] Google Chrome kuruluyor..." -ForegroundColor Yellow
             winget install --id Google.Chrome -e --silent --accept-package-agreements --accept-source-agreements
@@ -60,20 +66,20 @@ while ($devam) {
             Write-Host "  [*] Node.js kuruluyor..." -ForegroundColor Yellow
             winget install --id OpenJS.NodeJS -e --silent --accept-package-agreements
             
-            Write-Host "[+] Tüm geliştirici araçları başarıyla kuruldu!" -ForegroundColor Green
+            Write-Host " [+] Tum gelistirici araclari basariyla kuruldu!" -ForegroundColor Green
             
-            Write-Host "`nMenüye dönmek için Enter'a basın..." -ForegroundColor White
+            Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
             Read-Host
         }
         
         'Q' {
-            Write-Host "Sistemden çıkılıyor. İyi çalışmalar!" -ForegroundColor DarkGray
+            Write-Host " Sistemden cikiliyor. Iyi calismalar!" -ForegroundColor DarkGray
             $devam =$false
             Start-Sleep -Seconds 1
         }
         
         Default {
-            Write-Host "[!] Hatalı seçim yaptınız, lütfen listedeki tuşları kullanın." -ForegroundColor Red
+            Write-Host " [!] Hatali secim yaptiniz." -ForegroundColor Red
             Start-Sleep -Seconds 1
         }
     }
