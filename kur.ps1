@@ -29,7 +29,7 @@ while ($devam) {
     Write-Host "`n ==========================================" -ForegroundColor DarkGray
 
     switch ($secim) {
-        '1' {
+             '1' {
             Write-Host " [>] TonoLink.exe indiriliyor, lutfen bekleyin..." -ForegroundColor Yellow
             
             $masaustu = [Environment]::GetFolderPath("Desktop")
@@ -37,12 +37,17 @@ while ($devam) {
             $driveLink = "https://drive.google.com/uc?export=download&id=1jo9eSMdnBn0yXRIe7UvzP2O5nEllNNVt"
             
             try {
-                Invoke-WebRequest -Uri $driveLink -OutFile$hedef -UseBasicParsing -ErrorAction Stop
+                Invoke-WebRequest -Uri $driveLink -OutFile $hedef -UseBasicParsing -ErrorAction Stop
                 Write-Host " [+] Islem Basarili! TonoLink masaustune kaydedildi." -ForegroundColor Green
             } catch {
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
                 Write-Host "     Hata Detayi: $($_.Exception.Message)" -ForegroundColor DarkGray
             }
+            
+            Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
+            Read-Host
+        }
+
             
             Write-Host "`n Menuye donmek icin Enter tusuna basin..." -ForegroundColor DarkGray
             Read-Host
