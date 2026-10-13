@@ -12,12 +12,12 @@ while ($devam) {
     Write-Host "     |_| \___/|_| \_|\___//____| " -ForegroundColor Cyan
     Write-Host "                                 " -ForegroundColor Cyan
     Write-Host " ==========================================" -ForegroundColor DarkGray
-    Write-Host "        MERKEZI KURULUM ASISTANI v3.0      " -ForegroundColor Yellow
+    Write-Host "        MERKEZI KURULUM ASISTANI v3.1      " -ForegroundColor Yellow
     Write-Host " ==========================================" -ForegroundColor DarkGray
     Write-Host ""
-    Write-Host " [ Lutfen bir islem secin ]`n" -ForegroundColor White
+    Write-Host " [ Lutfen bir islem secin ]`n" -Footer -ForegroundColor White
     
-    Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "NPYS (Numarataj Personel) " -ForegroundColor White -NoNewline; Write-Host "(Masaustune Indir - Yuzde Gostergeli)" -ForegroundColor DarkGray
+    Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "NPYS (Numarataj Personel) " -ForegroundColor White -NoNewline; Write-Host "(Masaustune Akilli Indirici)" -ForegroundColor DarkGray
     Write-Host "  [2] " -ForegroundColor DarkGray -NoNewline; Write-Host "TonoLink " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
     Write-Host "  [3] " -ForegroundColor DarkGray -NoNewline; Write-Host "PayTak   " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
     Write-Host "  [4] " -ForegroundColor Yellow -NoNewline; Write-Host "Yazilim Kurulum Menusu " -ForegroundColor White -NoNewline; Write-Host "(Tekli Secimler)" -ForegroundColor DarkGray
@@ -28,7 +28,13 @@ while ($devam) {
 
     switch ($secim) {
         '1' {
-            Write-Host " [>] NPYS.exe indiriliyor..." -ForegroundColor Yellow
+            Write-Host ""
+            Write-Host " [i] Uygulama Bilgileri:" -ForegroundColor Cyan
+            Write-Host "     - Yazilim Adi : Numarataj Personel Yonetim Sistemi (NPYS)" -ForegroundColor White
+            Write-Host "     - Kaynak      : GitHub Releases (Son Surüm / Latest)" -ForegroundColor White
+            Write-Host "     - Hedef       : Masaustu" -ForegroundColor White
+            Write-Host ""
+            Write-Host " [>] Baglanti kuruluyor ve dosya indiriliyor..." -ForegroundColor Yellow
             
             $masaustu = [Environment]::GetFolderPath("Desktop")
             $hedef = "$masaustu\NPYS.exe"
@@ -37,18 +43,25 @@ while ($devam) {
             try {
                 $webClient = New-Object System.Net.WebClient
                 
+                # Konsol tabanlı akıcı dolum çubuğu için event
                 Register-ObjectEvent -InputObject $webClient -EventName DownloadProgressChanged -Action {
-                    Write-Progress -Activity "NPYS İndiriliyor..." -Status "$($EventArgs.ProgressPercentage)% tamamlandı" -PercentComplete $EventArgs.ProgressPercentage
+                    $yuzde = $EventArgs.ProgressPercentage
+                    $barUzunlugu = 30
+                    $dolu = [math]::Floor($barUzunlugu * $yuzde / 100)
+                    $bos = $barUzunlugu - $dolu
+                    $bar = "[" + ("#" * $dolu) + ("-" * $bos) + "]"
+                    
+                    # Satır üstüne yazarak akıcı ilerleme efekti verme
+                    Write-Host -NoNewline "`r Indiriliyor... $bar$yuzde% " -ForegroundColor Cyan
                 } | Out-Null
 
-                $webClient.DownloadFileTaskAsync($indirmeLinki, $hedef).Wait()
+                $webClient.DownloadFileTaskAsync($indirmeLinki,$hedef).Wait()
                 
                 Unregister-Event -SourceIdentifier $webClient -ErrorAction SilentlyContinue
-                Write-Progress -Activity "NPYS İndiriliyor..." -Completed
-                
-                Write-Host " [+] Islem Basarili! NPYS.exe masaustune kaydedildi." -ForegroundColor Green
+                Write-Host ""
+                Write-Host " [+] Islem Basarili! NPYS.exe basariyla masaustune kaydedildi." -ForegroundColor Green
             } catch {
-                Write-Progress -Activity "NPYS İndiriliyor..." -Completed
+                Write-Host ""
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
                 Write-Host "     Hata Detayi: $($_.Exception.Message)" -ForegroundColor DarkGray
             }
@@ -60,7 +73,7 @@ while ($devam) {
         '2' { Write-Host " [!] TonoLink modulu henuz aktif degil." -ForegroundColor DarkGray; Start-Sleep -Seconds 2 }
         '3' { Write-Host " [!] PayTak modulu henuz aktif degil." -ForegroundColor DarkGray; Start-Sleep -Seconds 2 }
         '4' {
-            $altDevam =$true
+            $altDevam = $true
             while ($altDevam) {
                 Clear-Host
                 Write-Host " ==========================================" -ForegroundColor DarkGray
@@ -86,7 +99,7 @@ while ($devam) {
                         Write-Host " [>] Microsoft Office kuruluyor..." -ForegroundColor Cyan
                         winget install --id Microsoft.Office -e --silent --accept-package-agreements --accept-source-agreements
                         Write-Host " [+] Office kuruldu!" -ForegroundColor Green
-                        Start-Sleep -Seconds 2
+                        Start-Sleep -Seconds 2`
                     }
                     '3' {
                         Write-Host " [>] WinRAR kuruluyor..." -ForegroundColor Cyan
