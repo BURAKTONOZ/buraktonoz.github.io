@@ -12,13 +12,13 @@ while ($devam) {
     Write-Host "     |_| \___/|_| \_|\___//____| " -ForegroundColor Cyan
     Write-Host "                                 " -ForegroundColor Cyan
     Write-Host " ==========================================" -ForegroundColor DarkGray
-    Write-Host "        MERKEZI KURULUM ASISTANI v2.9      " -ForegroundColor Yellow
+    Write-Host "        MERKEZI KURULUM ASISTANI v3.0      " -ForegroundColor Yellow
     Write-Host " ==========================================" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host " [ Lutfen bir islem secin ]`n" -ForegroundColor White
     
-    Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "TonoLink " -ForegroundColor White -NoNewline; Write-Host "(Masaustune Indir - Yuzde Gostergeli)" -ForegroundColor DarkGray
-    Write-Host "  [2] " -ForegroundColor DarkGray -NoNewline; Write-Host "NPYS     " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
+    Write-Host "  [1] " -ForegroundColor Green -NoNewline; Write-Host "NPYS (Numarataj Personel) " -ForegroundColor White -NoNewline; Write-Host "(Masaustune Indir - Yuzde Gostergeli)" -ForegroundColor DarkGray
+    Write-Host "  [2] " -ForegroundColor DarkGray -NoNewline; Write-Host "TonoLink " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
     Write-Host "  [3] " -ForegroundColor DarkGray -NoNewline; Write-Host "PayTak   " -ForegroundColor DarkGray -NoNewline; Write-Host "(Yakinda Eklenecek)" -ForegroundColor DarkGray
     Write-Host "  [4] " -ForegroundColor Yellow -NoNewline; Write-Host "Yazilim Kurulum Menusu " -ForegroundColor White -NoNewline; Write-Host "(Tekli Secimler)" -ForegroundColor DarkGray
     Write-Host "  [Q] " -ForegroundColor Red -NoNewline; Write-Host "Cikis`n" -ForegroundColor White
@@ -28,28 +28,27 @@ while ($devam) {
 
     switch ($secim) {
         '1' {
-            Write-Host " [>] TonoLink.exe indiriliyor..." -ForegroundColor Yellow
+            Write-Host " [>] NPYS.exe indiriliyor..." -ForegroundColor Yellow
             
             $masaustu = [Environment]::GetFolderPath("Desktop")
-            $hedef = "$masaustu\TonoLink.exe"
-            $indirmeLinki = "https://github.com/BURAKTONOZ/dosya/releases/latest/download/TonoLink.exe"
+            $hedef = "$masaustu\NPYS.exe"
+            $indirmeLinki = "https://github.com/BURAKTONOZ/personel/releases/download/latest/NPYS.exe"
             
             try {
-                # Yüzde göstergeli gelişmiş indirme fonksiyonu
                 $webClient = New-Object System.Net.WebClient
                 
                 Register-ObjectEvent -InputObject $webClient -EventName DownloadProgressChanged -Action {
-                    Write-Progress -Activity "TonoLink İndiriliyor..." -Status "$($EventArgs.ProgressPercentage)% tamamlandı" -PercentComplete $EventArgs.ProgressPercentage
+                    Write-Progress -Activity "NPYS İndiriliyor..." -Status "$($EventArgs.ProgressPercentage)% tamamlandı" -PercentComplete $EventArgs.ProgressPercentage
                 } | Out-Null
 
                 $webClient.DownloadFileTaskAsync($indirmeLinki, $hedef).Wait()
                 
                 Unregister-Event -SourceIdentifier $webClient -ErrorAction SilentlyContinue
-                Write-Progress -Activity "TonoLink İndiriliyor..." -Completed
+                Write-Progress -Activity "NPYS İndiriliyor..." -Completed
                 
-                Write-Host " [+] Islem Basarili! TonoLink (.exe) masaustune kaydedildi." -ForegroundColor Green
+                Write-Host " [+] Islem Basarili! NPYS.exe masaustune kaydedildi." -ForegroundColor Green
             } catch {
-                Write-Progress -Activity "TonoLink İndiriliyor..." -Completed
+                Write-Progress -Activity "NPYS İndiriliyor..." -Completed
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
                 Write-Host "     Hata Detayi: $($_.Exception.Message)" -ForegroundColor DarkGray
             }
@@ -58,7 +57,7 @@ while ($devam) {
             $null = Read-Host
         }
         
-        '2' { Write-Host " [!] NPYS modulu henuz aktif degil." -ForegroundColor DarkGray; Start-Sleep -Seconds 2 }
+        '2' { Write-Host " [!] TonoLink modulu henuz aktif degil." -ForegroundColor DarkGray; Start-Sleep -Seconds 2 }
         '3' { Write-Host " [!] PayTak modulu henuz aktif degil." -ForegroundColor DarkGray; Start-Sleep -Seconds 2 }
         '4' {
             $altDevam =$true
