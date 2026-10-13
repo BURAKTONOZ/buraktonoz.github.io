@@ -12,8 +12,7 @@ try {
     chcp 65001 > $null
 } catch {}
 
-$Surum    = '4.0'
-$Genislik = 62
+$Surum    = '4.0'$Genislik = 62
 
 # ------------------------------------------------------------
 #  MODÜLLER
@@ -53,10 +52,10 @@ $Katalog = [ordered]@{
         @{ Ad = 'GitHub Desktop';     Id = 'GitHub.GitHubDesktop';       Aciklama = 'Git arayüzü' }
     )
     'Medya ve İletişim' = @(
-        @{ Ad = 'VLC Media Player'; Id = 'VideoLAN.VLC';            Aciklama = 'Her formatı oynatır' }
-        @{ Ad = 'Spotify';          Id = 'Spotify.Spotify';         Aciklama = 'Müzik' }
-        @{ Ad = 'WhatsApp';         Id = '9NKSQGP7F2NH';            Aciklama = 'Mağaza sürümü'; Kaynak = 'msstore' }
-        @{ Ad = 'Discord';          Id = 'Discord.Discord';         Aciklama = 'Sesli / yazılı sohbet' }
+        @{ Ad = 'VLC Media Player'; Id = 'VideoLAN.VLC';             Aciklama = 'Her formatı oynatır' }
+        @{ Ad = 'Spotify';          Id = 'Spotify.Spotify';          Aciklama = 'Müzik' }
+        @{ Ad = 'WhatsApp';         Id = '9NKSQGP7F2NH';             Aciklama = 'Mağaza sürümü'; Kaynak = 'msstore' }
+        @{ Ad = 'Discord';          Id = 'Discord.Discord';          Aciklama = 'Sesli / yazılı sohbet' }
     )
 }
 
@@ -73,13 +72,11 @@ function Write-Cizgi {
 }
 
 function Write-Baslik {
-    param([string]$Baslik)
-    $ic  = $Genislik - 2
-    $sol = [math]::Floor(($ic - $Baslik.Length) / 2)
-    $sag = $ic - $Baslik.Length - $sol
+    param([string]$Baslik)$ic  = $Genislik - 2$sol = [math]::Floor(($ic -$Baslik.Length) / 2)
+    $sag =$ic - $Baslik.Length -$sol
     Write-Host (' ╔' + ('═' * $ic) + '╗') -ForegroundColor DarkGray
     Write-Host ' ║' -ForegroundColor DarkGray -NoNewline
-    Write-Host ((' ' * $sol) + $Baslik + (' ' * $sag)) -ForegroundColor Yellow -NoNewline
+    Write-Host ((' ' * $sol) + $Baslik + (' ' *$sag)) -ForegroundColor Yellow -NoNewline
     Write-Host '║' -ForegroundColor DarkGray
     Write-Host (' ╚' + ('═' * $ic) + '╝') -ForegroundColor DarkGray
 }
@@ -87,22 +84,21 @@ function Write-Baslik {
 function Write-Mesaj {
     param([string]$Tip, [string]$Metin)
     switch ($Tip) {
-        'bilgi' { $s = '[i]'; $r = 'Cyan' }
-        'ok'    { $s = '[+]'; $r = 'Green' }
-        'uyari' { $s = '[!]'; $r = 'Yellow' }
-        'hata'  { $s = '[-]'; $r = 'Red' }
-        default { $s = '[>]'; $r = 'Gray' }
+        'bilgi' { $s = '[i]';$r = 'Cyan' }
+        'ok'    { $s = '[+]';$r = 'Green' }
+        'uyari' { $s = '[!]';$r = 'Yellow' }
+        'hata'  { $s = '[-]';$r = 'Red' }
+        default { $s = '[>]';$r = 'Gray' }
     }
     Write-Host " $s $Metin" -ForegroundColor $r
 }
 
 function Write-MenuSatir {
-    param([string]$Tus, [string]$Ad, [string]$Aciklama, [string]$TusRenk = 'Green', [bool]$Aktif = $true)
-    $adRenk = 'White'
-    if (-not $Aktif) { $TusRenk = 'DarkGray'; $adRenk = 'DarkGray' }
+    param([string]$Tus, [string]$Ad, [string]$Aciklama, [string]$TusRenk = 'Green', [bool]$Aktif = $true)$adRenk = 'White'
+    if (-not $Aktif) { $TusRenk = 'DarkGray';$adRenk = 'DarkGray' }
     Write-Host '  ' -NoNewline
-    Write-Host ('[{0}]' -f $Tus) -ForegroundColor $TusRenk -NoNewline
-    Write-Host (' ' + $Ad.PadRight(28)) -ForegroundColor $adRenk -NoNewline
+    Write-Host ('[{0}]' -f $Tus) -ForegroundColor$TusRenk -NoNewline
+    Write-Host (' ' + $Ad.PadRight(28)) -ForegroundColor$adRenk -NoNewline
     Write-Host $Aciklama -ForegroundColor DarkGray
 }
 
@@ -123,7 +119,14 @@ function Test-Winget {
 }
 
 function Show-Logo {
-    $logo = @( '    _____ ___  _   _ ___  _____ ', '   \vert{}_   _/ _ \Vert{} \ \vert{} \vert{}/ _ \Vert{}__  / ', '     \vert{} \vert{}\vert{} \vert{} \vert{} \vert{}  \Vert{} \vert{} \vert{} \vert{} \vert{} / /  ', '     \vert{} \vert{}\vert{} \vert{}_\vert{} \vert{} \vert{}\  \vert{} \vert{}_\vert{} \vert{}/ /_  ', '     \vert{}_\vert{} \___/\vert{}_\vert{} \_\vert{}\___//____\vert{} ' )$renkler = @('Cyan', 'Cyan', 'Cyan', 'DarkCyan', 'DarkCyan')
+    $logo = @( 
+        '  _______ ____  _   _  ____  ______ ', 
+        ' |__   __/ __ \| \ | |/ __ \|___  / ', 
+        '    | | | |  | |  \| | |  | |  / /  ', 
+        '    | | | |  | | . ` | |  | | / /   ', 
+        '    |_|  \____/|_|\__|\____/ /____| ' 
+    )
+    $renkler = @('Cyan', 'Cyan', 'Cyan', 'DarkCyan', 'DarkCyan')
     Write-Host ''
     for ($i = 0; $i -lt $logo.Count; $i++) {
         Write-Host $logo[$i] -ForegroundColor $renkler[$i]
@@ -146,6 +149,7 @@ function Show-DurumSatiri {
 function Write-Ilerleme {
     param([long]$Indirilen, [long]$Toplam, [double]$Sure)$mb  = $Indirilen / 1MB$hiz = 0
     if ($Sure -gt 0) {$hiz = $mb / $Sure }
+    
     if ($Toplam -gt 0) {
         $yuzde = [int][math]::Floor($Indirilen * 100 / $Toplam)$dolu  = [int][math]::Floor(30 * $yuzde / 100)$bar   = ('█' * $dolu) + ('░' * (30 -$dolu))
         $satir = ' {0} \%{1,3}  {2:N1}/{3:N1} MB  {4:N1} MB/s' -f$bar, $yuzde,$mb, ($Toplam / 1MB),$hiz
