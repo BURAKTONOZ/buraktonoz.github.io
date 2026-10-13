@@ -12,7 +12,7 @@ while ($devam) {
     Write-Host "    |_| \___/|_| \_|\___//____| " -ForegroundColor Cyan
     Write-Host "                                " -ForegroundColor Cyan
     Write-Host " ==========================================" -ForegroundColor DarkGray
-    Write-Host "        MERKEZI KURULUM ASISTANI v1.3      " -ForegroundColor Yellow
+    Write-Host "        MERKEZI KURULUM ASISTANI v2.0      " -ForegroundColor Yellow
     Write-Host " ==========================================" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host " [ Lutfen bir islem secin ]`n" -ForegroundColor White
@@ -28,15 +28,17 @@ while ($devam) {
 
     switch ($secim) {
         '1' {
-            Write-Host " [>] TonoLink.exe indiriliyor, lutfen bekleyin..." -ForegroundColor Yellow
+            Write-Host " [>] TonoLink.exe kendi sunucunuzdan indiriliyor..." -ForegroundColor Yellow
             
             $masaustu = [Environment]::GetFolderPath("Desktop")
             $hedef = "$masaustu\TonoLink.exe"
-            $driveLink = "https://drive.google.com/uc?export=download&id=1jo9eSMdnBn0yXRIe7UvzP2O5nEllNNVt"
+            
+            # Google Drive yerine dogrudan kendi sitenden cekiyoruz
+            $indirmeLinki = "https://buraktonoz.com/TonoLink.exe"
             
             try {
-                Invoke-WebRequest -Uri $driveLink -OutFile $hedef -UseBasicParsing -ErrorAction Stop
-                Write-Host " [+] Islem Basarili! TonoLink masaustune kaydedildi." -ForegroundColor Green
+                Invoke-WebRequest -Uri $indirmeLinki -OutFile$hedef -UseBasicParsing -ErrorAction Stop
+                Write-Host " [+] Islem Basarili! TonoLink (Gercek .exe) masaustune kaydedildi." -ForegroundColor Green
             } catch {
                 Write-Host " [-] Indirme basarisiz oldu!" -ForegroundColor Red
                 Write-Host "     Hata Detayi: $($_.Exception.Message)" -ForegroundColor DarkGray
