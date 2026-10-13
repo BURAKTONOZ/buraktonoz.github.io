@@ -1,37 +1,38 @@
 <#
     TONOZ - MERKEZİ KURULUM ASİSTANI v4.0
-    Windows PowerShell 5.1 ve PowerShell 7 ile uyumludur.
-    ÖNEMLİ: Dosyayı "UTF-8 with BOM" olarak kaydedin (Türkçe karakterler için).
+    Windows PowerShell 5.1 ve PowerShell 7 ile tam uyumludur.
+    ÖNEMLİ: Menü çizgilerinin ve Türkçe karakterlerin düzgün görünmesi için
+    bu dosyayı kesinlikle "UTF-8 with BOM" olarak kaydetmelisiniz!
 #>
 
 # ============================================================
-#  AYARLAR
+#  AYARLAR VE KODLAMA (ENCODING) DÜZELTMELERİ
 # ============================================================
 try { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 } catch {}
+
+# Konsolun hem çıktı hem girdi kodlamasını UTF-8'e zorluyoruz
 try {
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    [Console]::InputEncoding  = [System.Text.Encoding]::UTF8
     $OutputEncoding = [System.Text.Encoding]::UTF8
+    chcp 65001 > $null
 } catch {}
 
 $Surum    = '4.0'
 $Genislik = 62
 
 # ------------------------------------------------------------
-#  ANA MENÜDEKİ MODÜLLER (masaüstüne indirilen kendi programların)
+#  ANA MENÜDEKİ MODÜLLER (Masaüstüne indirilen kendi programların)
 #  Url boş bırakılırsa "Yakında" olarak görünür.
-#  Yeni program eklemek için aşağıya yeni bir satır ekle.
 # ------------------------------------------------------------
 $Moduller = @(
     @{ Ad = 'NPYS';     Aciklama = 'Numarataj Personel Yönetim Sistemi'; Dosya = 'NPYS.exe';     Url = 'https://github.com/BURAKTONOZ/personel/releases/latest/download/NPYS.exe' }
     @{ Ad = 'TonoLink'; Aciklama = 'Kısayol Dock Programı';              Dosya = 'TonoLink.exe'; Url = '' }
     @{ Ad = 'PayTak';   Aciklama = 'Ödeme Takip Programı';               Dosya = 'PayTak.exe';   Url = '' }
-    # @{ Ad = 'Yeni Program'; Aciklama = 'Açıklama'; Dosya = 'Program.exe'; Url = 'https://...' }
 )
 
 # ------------------------------------------------------------
 #  YAZILIM KATALOĞU (winget)
-#  Id'yi doğrulamak için:  winget search "program adı"
-#  Kaynak = 'msstore' sadece Microsoft Store uygulamaları içindir.
 # ------------------------------------------------------------
 $Katalog = [ordered]@{
     'Tarayıcılar' = @(
@@ -91,27 +92,20 @@ $Katalog = [ordered]@{
         @{ Ad = 'Battle.net';       Id = 'Blizzard.BattleNet';              Aciklama = 'Blizzard oyunları' }
     )
     'Sürücü ve Çalışma Kitaplıkları' = @(
-        @{ Ad = 'Visual C++ Redistributable x64'; Id = 'Microsoft.VCRedist.2015+.x64';      Aciklama = 'Birçok program için gerekli' }
-        @{ Ad = '.NET Desktop Runtime 8';         Id = 'Microsoft.DotNet.DesktopRuntime.8'; Aciklama = '.NET uygulamaları için' }
-        @{ Ad = 'DirectX Çalışma Zamanı';         Id = 'Microsoft.DirectX';                 Aciklama = 'Oyun / grafik bileşenleri' }
-        @{ Ad = 'CPU-Z';                          Id = 'CPUID.CPU-Z';                       Aciklama = 'İşlemci bilgisi' }
-        @{ Ad = 'GPU-Z';                          Id = 'TechPowerUp.GPU-Z';                 Aciklama = 'Ekran kartı bilgisi' }
-        @{ Ad = 'HWiNFO';                         Id = 'REALiX.HWiNFO';                     Aciklama = 'Donanım izleme' }
-        @{ Ad = 'CrystalDiskInfo';                Id = 'CrystalDewWorld.CrystalDiskInfo';   Aciklama = 'Disk sağlığı' }
-    )
-    # -------- KİŞİSEL PROGRAMLARIN BURAYA --------
-    'Kişisel Programlarım' = @(
-        # @{ Ad = 'Program Adı'; Id = 'Yayinci.ProgramId'; Aciklama = 'Kısa açıklama' }
+        @{ Ad = 'Visual C++ Redistributable'; Id = 'Microsoft.VCRedist.2015+.x64';      Aciklama = 'Birçok program için gerekli' }
+        @{ Ad = '.NET Desktop Runtime 8';     Id = 'Microsoft.DotNet.DesktopRuntime.8'; Aciklama = '.NET uygulamaları için' }
+        @{ Ad = 'DirectX Çalışma Zamanı';     Id = 'Microsoft.DirectX';                 Aciklama = 'Oyun / grafik bileşenleri' }
+        @{ Ad = 'CPU-Z';                      Id = 'CPUID.CPU-Z';                       Aciklama = 'İşlemci bilgisi' }
+        @{ Ad = 'GPU-Z';                      Id = 'TechPowerUp.GPU-Z';                 Aciklama = 'Ekran kartı bilgisi' }
     )
 }
 
 # ------------------------------------------------------------
-#  HAZIR PAKETLER (tek seçimle birden fazla program)
-#  Değerler yukarıdaki katalogdaki Id'lerdir.
+#  HAZIR PAKETLER
 # ------------------------------------------------------------
 $Paketler = [ordered]@{
     'Yeni PC - Temel Paket' = @('Google.Chrome', '7zip.7zip', 'VideoLAN.VLC', 'Notepad++.Notepad++', 'Adobe.Acrobat.Reader.64-bit', 'Microsoft.VCRedist.2015+.x64')
-    'Geliştirici Paketi'    = @('Microsoft.VisualStudioCode', 'Git.Git', 'OpenJS.NodeJS.LTS', 'Python.Python.3.13', 'Microsoft.WindowsTerminal', 'GitHub.GitHubDesktop')
+    'Geliştirici Paketi'    = @('Microsoft.VisualStudioCode', 'Git.Git', 'OpenJS.NodeJS.LTS', 'Python.Python.3.13', 'Microsoft.WindowsTerminal')
     'Ofis Paketi'           = @('Google.Chrome', 'TheDocumentFoundation.LibreOffice', 'Adobe.Acrobat.Reader.64-bit', '7zip.7zip')
 }
 
@@ -152,7 +146,7 @@ function Write-MenuSatir {
     if (-not $Aktif) { $TusRenk = 'DarkGray'; $adRenk = 'DarkGray' }
     Write-Host '  ' -NoNewline
     Write-Host ('[{0}]' -f $Tus) -ForegroundColor $TusRenk -NoNewline
-    Write-Host (' ' + $Ad.PadRight(26)) -ForegroundColor $adRenk -NoNewline
+    Write-Host (' ' + $Ad.PadRight(28)) -ForegroundColor $adRenk -NoNewline
     Write-Host $Aciklama -ForegroundColor DarkGray
 }
 
@@ -173,14 +167,7 @@ function Test-Winget {
 }
 
 function Show-Logo {
-    $logo = @(
-        '    _____ ___  _   _ ___  _____ ',
-        '   |_   _/ _ \| \ | |/ _ \|__  / ',
-        '     | || | | |  \| | | | | / /  ',
-        '     | || |_| | |\  | |_| |/ /_  ',
-        '     |_| \___/|_| \_|\___//____| '
-    )
-    $renkler = @('Cyan', 'Cyan', 'Cyan', 'DarkCyan', 'DarkCyan')
+    $logo = @( '    _____ ___  _   _ ___  _____ ', '   \vert{}_   _/ _ \Vert{} \ \vert{} \vert{}/ _ \Vert{}__  / ', '     \vert{} \vert{}\vert{} \vert{} \vert{} \vert{}  \Vert{} \vert{} \vert{} \vert{} \vert{} / /  ', '     \vert{} \vert{}\vert{} \vert{}_\vert{} \vert{} \vert{}\  \vert{} \vert{}_\vert{} \vert{}/ /_  ', '     \vert{}_\vert{} \___/\vert{}_\vert{} \_\vert{}\___//____\vert{} ' )$renkler = @('Cyan', 'Cyan', 'Cyan', 'DarkCyan', 'DarkCyan')
     Write-Host ''
     for ($i = 0; $i -lt $logo.Count; $i++) {
         Write-Host $logo[$i] -ForegroundColor $renkler[$i]
@@ -194,27 +181,23 @@ function Show-DurumSatiri {
     $adminRenk  = if ($admin -eq 'Evet')    { 'Green' } else { 'Yellow' }
     $wingetRenk = if ($winget -eq 'Hazır')  { 'Green' } else { 'Red' }
     Write-Host '  Yönetici: ' -ForegroundColor DarkGray -NoNewline
-    Write-Host $admin -ForegroundColor $adminRenk -NoNewline
+    Write-Host $admin -ForegroundColor$adminRenk -NoNewline
     Write-Host '   winget: ' -ForegroundColor DarkGray -NoNewline
-    Write-Host $winget -ForegroundColor $wingetRenk -NoNewline
+    Write-Host $winget -ForegroundColor$wingetRenk -NoNewline
     Write-Host ('   {0}' -f (Get-Date -Format 'dd.MM.yyyy HH:mm')) -ForegroundColor DarkGray
 }
 
 # ============================================================
-#  İNDİRME (hatasız ilerleme çubuğu - olay/event kullanmaz)
+#  İNDİRME (Hatasız ilerleme çubuğu - Olay kullanmaz)
 # ============================================================
 function Write-Ilerleme {
-    param([long]$Indirilen, [long]$Toplam, [double]$Sure)
-    $mb  = $Indirilen / 1MB
-    $hiz = 0
-    if ($Sure -gt 0) { $hiz = $mb / $Sure }
+    param([long]$Indirilen, [long]$Toplam, [double]$Sure)$mb  = $Indirilen / 1MB$hiz = 0
+    if ($Sure -gt 0) {$hiz = $mb / $Sure }
     if ($Toplam -gt 0) {
-        $yuzde = [int][math]::Floor($Indirilen * 100 / $Toplam)
-        $dolu  = [int][math]::Floor(30 * $yuzde / 100)
-        $bar   = ('█' * $dolu) + ('░' * (30 - $dolu))
-        $satir = ' {0} %{1,3}  {2:N1}/{3:N1} MB  {4:N1} MB/s' -f $bar, $yuzde, $mb, ($Toplam / 1MB), $hiz
+        $yuzde = [int][math]::Floor($Indirilen * 100 / $Toplam)$dolu  = [int][math]::Floor(30 * $yuzde / 100)$bar   = ('█' * $dolu) + ('░' * (30 -$dolu))
+        $satir = ' {0} \%{1,3}  {2:N1}/{3:N1} MB  {4:N1} MB/s' -f$bar, $yuzde,$mb, ($Toplam / 1MB),$hiz
     } else {
-        $satir = ' {0:N1} MB indirildi  {1:N1} MB/s' -f $mb, $hiz
+        $satir = ' {0:N1} MB indirildi  {1:N1} MB/s' -f $mb,$hiz
     }
     Write-Host ("`r" + $satir.PadRight(78)) -ForegroundColor Cyan -NoNewline
 }
@@ -343,7 +326,6 @@ function Install-Program {
              '--accept-package-agreements', '--accept-source-agreements')
     & winget @arg
     $kod = $LASTEXITCODE
-    # 0 = başarılı | -1978335189 = güncelleme yok | -1978335135 = zaten kurulu
     if ($kod -eq 0) {
         Write-Mesaj 'ok' "$($Program.Ad) kuruldu!"
         return $true
@@ -367,7 +349,7 @@ function Install-Liste {
     foreach ($p in $Programlar) { Write-Host "     - $($p.Ad)" -ForegroundColor White }
     if (-not (Test-Admin)) {
         Write-Host ''
-        Write-Mesaj 'uyari' 'Yönetici olarak çalışmıyorsunuz; bazı kurulumlar izin penceresi (UAC) açabilir.'
+        Write-Mesaj 'uyari' 'Yönetici olarak çalışmıyorsunuz; kurulumlar izin (UAC) isteyebilir.'
     }
     $onay = Read-Host "`n  > Onaylıyor musunuz? (E/H)"
     if ($onay -notmatch '^[eE]') {
@@ -377,13 +359,11 @@ function Install-Liste {
     }
 
     $basarili = 0
-    $hatalilar = New-Object System.Collections.Generic.List[string]
-    $sira = 0
-    foreach ($p in $Programlar) {
-        $sira++
+    $hatalilar = New-Object System.Collections.Generic.List[string]$sira = 0
+    foreach ($p in $Programlar) {$sira++
         Write-Cizgi
-        Write-Host (" [{0}/{1}]" -f $sira, $Programlar.Count) -ForegroundColor DarkGray -NoNewline
-        if (Install-Program $p) { $basarili++ } else { $hatalilar.Add($p.Ad) }
+        Write-Host (" [{0}/{1}]" -f $sira,$Programlar.Count) -ForegroundColor DarkGray -NoNewline
+        if (Install-Program $p) {$basarili++ } else { $hatalilar.Add($p.Ad) }
     }
 
     Write-Cizgi
@@ -396,15 +376,14 @@ function Install-Liste {
 }
 
 function Show-KategoriMenu {
-    param([string]$Kategori)
-    $liste = @($Katalog[$Kategori])
-    $geri  = $false
+    param([string]$Kategori)$liste = @($Katalog[$Kategori])
+    $geri  =$false
     while (-not $geri) {
         Clear-Host
         Write-Baslik $Kategori
         Write-Host ''
         if ($liste.Count -eq 0) {
-            Write-Mesaj 'uyari' 'Bu kategori şu an boş. Betiğin $Katalog bölümüne program ekleyebilirsiniz.'
+            Write-Mesaj 'uyari' 'Bu kategori şu an boş.'
             Wait-Enter
             return
         }
@@ -421,11 +400,11 @@ function Show-KategoriMenu {
         Write-Host ''
         $girdi = (Read-Host '  > Seçiminiz').Trim()
 
-        if ($girdi -match '^[bB]$') { $geri = $true; continue }
+        if ($girdi -match '^[bB]$') { $geri =$true; continue }
         if ($girdi -match '^[tT]$') {
-            $secilen = $liste
+            $secilen =$liste
         } else {
-            $idx = @(Get-Secimler $girdi $liste.Count)
+            $idx = @(Get-Secimler $girdi$liste.Count)
             $secilen = @($idx | ForEach-Object { $liste[$_ - 1] })
         }
         if ($secilen.Count -eq 0) {
@@ -439,13 +418,12 @@ function Show-KategoriMenu {
 
 function Show-PaketMenu {
     $anahtarlar = @($Paketler.Keys)
-    $geri = $false
+    $geri =$false
     while (-not $geri) {
         Clear-Host
         Write-Baslik 'HAZIR PAKETLER'
         Write-Host ''
-        for ($i = 0; $i -lt $anahtarlar.Count; $i++) {
-            $adlar = ($Paketler[$anahtarlar[$i]] | ForEach-Object { (Get-ProgramById $_).Ad }) -join ', '
+        for ($i = 0; $i -lt$anahtarlar.Count; $i++) {$adlar = ($Paketler[$anahtarlar[$i]] \vert{} ForEach-Object { (Get-ProgramById$_).Ad }) -join ', '
             Write-Host ('  [{0}] ' -f ($i + 1)) -ForegroundColor Green -NoNewline
             Write-Host $anahtarlar[$i] -ForegroundColor White
             Write-Host "      $adlar" -ForegroundColor DarkGray
@@ -455,14 +433,13 @@ function Show-PaketMenu {
         Write-Host '  [B] ' -ForegroundColor Cyan -NoNewline; Write-Host 'Geri' -ForegroundColor White
         Write-Host ''
         $girdi = (Read-Host '  > Seçiminiz').Trim()
-        if ($girdi -match '^[bB]$') { $geri = $true; continue }
-        $idx = @(Get-Secimler $girdi $anahtarlar.Count)
+        if ($girdi -match '^[bB]$') {$geri = $true; continue }$idx = @(Get-Secimler $girdi$anahtarlar.Count)
         if ($idx.Count -eq 0) {
             Write-Mesaj 'uyari' 'Geçerli bir seçim yapmadınız.'
             Start-Sleep -Seconds 1
             continue
         }
-        $secilen = @($Paketler[$anahtarlar[$idx[0] - 1]] | ForEach-Object { Get-ProgramById $_ })
+        $secilen = @($Paketler[$anahtarlar[$idx[0] - 1]] \vert{} ForEach-Object { Get-ProgramById$_ })
         Install-Liste -Programlar $secilen
     }
 }
@@ -476,14 +453,14 @@ function Show-YazilimMenu {
         return
     }
     $kategoriler = @($Katalog.Keys)
-    $geri = $false
+    $geri =$false
     while (-not $geri) {
         Clear-Host
         Write-Baslik 'YAZILIM KURULUM MERKEZİ'
         Write-Host ''
         for ($i = 0; $i -lt $kategoriler.Count; $i++) {
             $adet = @($Katalog[$kategoriler[$i]]).Count
-            Write-MenuSatir -Tus ('{0,2}' -f ($i + 1)) -Ad $kategoriler[$i] -Aciklama "($adet program)"
+            Write-MenuSatir -Tus ('{0,2}' -f ($i + 1)) -Ad$kategoriler[$i] -Aciklama "($adet program)"
         }
         Write-Host ''
         Write-MenuSatir -Tus ' P' -Ad 'Hazır Paketler' -Aciklama '(Tek seçimle çoklu kurulum)' -TusRenk 'Yellow'
@@ -491,9 +468,9 @@ function Show-YazilimMenu {
         Write-Host ''
         $girdi = (Read-Host '  > Seçiminiz').Trim()
 
-        if ($girdi -match '^[bB]$') { $geri = $true }
+        if ($girdi -match '^[bB]$') { $geri =$true }
         elseif ($girdi -match '^[pP]$') { Show-PaketMenu }
-        elseif ($girdi -match '^\d+$' -and [int]$girdi -ge 1 -and [int]$girdi -le $kategoriler.Count) {
+        elseif ($girdi -match '^\d+$' -and [int]$girdi -ge 1 -and [int]$girdi -le$kategoriler.Count) {
             Show-KategoriMenu -Kategori $kategoriler[[int]$girdi - 1]
         }
         else {
@@ -503,9 +480,6 @@ function Show-YazilimMenu {
     }
 }
 
-# ============================================================
-#  GÜNCELLEME ve SİSTEM BİLGİSİ
-# ============================================================
 function Update-Hepsi {
     if (-not (Test-Winget)) {
         Write-Mesaj 'hata' 'winget bulunamadı.'
@@ -530,10 +504,8 @@ function Show-SistemBilgisi {
     Write-Baslik 'SİSTEM BİLGİSİ'
     Write-Host ''
     try {
-        $os   = Get-CimInstance Win32_OperatingSystem
-        $cpu  = Get-CimInstance Win32_Processor | Select-Object -First 1
-        $cs   = Get-CimInstance Win32_ComputerSystem
-        $disk = Get-CimInstance Win32_LogicalDisk -Filter "DeviceID='C:'"
+        $os   = Get-CimInstance Win32_OperatingSystem$cpu  = Get-CimInstance Win32_Processor | Select-Object -First 1
+        $cs   = Get-CimInstance Win32_ComputerSystem$disk = Get-CimInstance Win32_LogicalDisk -Filter "DeviceID='C:'"
         $satirlar = [ordered]@{
             'Bilgisayar'      = $env:COMPUTERNAME
             'Kullanıcı'       = $env:USERNAME
@@ -542,7 +514,7 @@ function Show-SistemBilgisi {
             'RAM'             = ('{0:N1} GB' -f ($cs.TotalPhysicalMemory / 1GB))
             'Disk (C:)'       = ('{0:N0} GB boş / {1:N0} GB' -f ($disk.FreeSpace / 1GB), ($disk.Size / 1GB))
         }
-        foreach ($k in $satirlar.Keys) {
+        foreach ($k in$satirlar.Keys) {
             Write-Host ('  {0}: ' -f $k.PadRight(16)) -ForegroundColor DarkGray -NoNewline
             Write-Host $satirlar[$k] -ForegroundColor White
         }
@@ -555,7 +527,7 @@ function Show-SistemBilgisi {
 # ============================================================
 #  ANA MENÜ
 # ============================================================
-$devam = $true
+$devam =$true
 while ($devam) {
     Clear-Host
     Show-Logo
@@ -565,12 +537,11 @@ while ($devam) {
     Write-Host '  Programlarım' -ForegroundColor Cyan
     Write-Cizgi
 
-    for ($i = 0; $i -lt $Moduller.Count; $i++) {
-        $m = $Moduller[$i]
+    for ($i = 0; $i -lt$Moduller.Count; $i++) {$m = $Moduller[$i]
         $aktif = -not [string]::IsNullOrWhiteSpace($m.Url)
-        $acik  = $m.Aciklama
-        if (-not $aktif) { $acik = '(Yakında Eklenecek)' }
-        Write-MenuSatir -Tus ($i + 1) -Ad $m.Ad -Aciklama $acik -Aktif $aktif
+        $acik  =$m.Aciklama
+        if (-not $aktif) {$acik = '(Yakında Eklenecek)' }
+        Write-MenuSatir -Tus ($i + 1) -Ad$m.Ad -Aciklama $acik -Aktif$aktif
     }
 
     Write-Host ''
@@ -584,7 +555,7 @@ while ($devam) {
 
     $secim = (Read-Host '  > Seçiminiz').Trim().ToUpper([System.Globalization.CultureInfo]::InvariantCulture)
 
-    if ($secim -match '^\d+$' -and [int]$secim -ge 1 -and [int]$secim -le $Moduller.Count) {
+    if ($secim -match '^\d+$' -and [int]$secim -ge 1 -and [int]$secim -le$Moduller.Count) {
         Start-ModulIndir -Modul $Moduller[[int]$secim - 1]
     }
     else {
@@ -595,7 +566,7 @@ while ($devam) {
             'Q' {
                 Write-Host ''
                 Write-Host ' Sistemden çıkılıyor. İyi çalışmalar!' -ForegroundColor DarkGray
-                $devam = $false
+                $devam =$false
                 Start-Sleep -Seconds 1
             }
             default {
