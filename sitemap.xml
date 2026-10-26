@@ -1,108 +1,1503 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Ana Portfolyo & Hub Siten -->
-  <url>
-    <loc>https://buraktonoz.com/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<!DOCTYPE html>
+<html lang="tr" class="light scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PRIMARY SEO & GOOGLE SEARCH OPTIMIZATION -->
+    <title>Burak Tonoz | Harita Mühendisi & Yazılım Geliştirici — Azimut, PDF Editör, Numarataj & CBS Çözümleri</title>
+    <meta name="title" content="Burak Tonoz | Harita Mühendisi & Yazılım Geliştirici — Azimut, PDF Editör, Numarataj & CBS Çözümleri">
+    <meta name="description" content="Harita Mühendisi ve Program Geliştirici Burak Tonoz'un resmi portfolyosu ve uygulama merkezi. Azimut (ITRF96 / WGS84 Koordinat Dönüştürücü), Ücretsiz Online PDF Editör, Personel Yönetim Sistemi, Numarataj Pro, Evrak Dağıtım Sistemi, Gerçek/Tüzel Kişi Bilgi Formu, BELTAŞ İzin Formu, TonozShare ve PlakTon projeleri.">
+    <meta name="keywords" content="Burak Tonoz, Harita Mühendisi, Yazılım Geliştirici, Program Geliştirici, Azimut, ITRF96 WGS84 Koordinat Dönüştürücü, Online PDF Editör, PDF Birleştirme Bölme, Numarataj Pro, Gerçek Tüzel Kişi Bilgi Formu, BELTAŞ İzin Formu, Personel Yönetim Sistemi, Evrak Dağıtım Sistemi, TonozShare, PlakTon, TonoLink, PayTak, Federal Chat, Morsify, CBS, GIS, Ankara Harita Mühendisi">
+    <meta name="author" content="Burak Tonoz">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://buraktonoz.com/">
 
-  <!-- 1. GeoITRF (En Önemli / Öncelikli Proje) -->
-  <url>
-    <loc>https://buraktonoz.com/GeoITRF/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
+    <!-- GEO META TAGS -->
+    <meta name="geo.region" content="TR-06">
+    <meta name="geo.placename" content="Ankara, Türkiye">
+    <meta name="language" content="Turkish">
 
-  <!-- 2. PDF Editör & Araçları (En Önemli / Öncelikli Proje) -->
-  <url>
-    <loc>https://buraktonoz.com/pdf/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
+    <!-- OPEN GRAPH / FACEBOOK / WHATSAPP / LINKEDIN -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buraktonoz.com/">
+    <meta property="og:site_name" content="Burak Tonoz — Portfolyo & Uygulama Merkezi">
+    <meta property="og:title" content="Burak Tonoz | Harita Mühendisi & Yazılım Geliştirici">
+    <meta property="og:description" content="Azimut Koordinat Terminali, Online PDF Editör, Numarataj Pro, Personel Yönetim Sistemi, Gerçek/Tüzel Kişi Bilgi Formu ve IoT Mühendislik Çözümleri.">
+    <meta property="og:image" content="https://github.com/buraktonoz.png">
+    <meta property="og:locale" content="tr_TR">
 
-  <!-- 3. Personel Yönetim Sistemi -->
-  <url>
-    <loc>https://buraktonoz.com/personel/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://buraktonoz.com/">
+    <meta name="twitter:title" content="Burak Tonoz | Harita Mühendisi & Yazılım Geliştirici">
+    <meta name="twitter:description" content="Azimut, PDF Editör, Numarataj Pro, Kurumsal Otomasyon ve CBS/GIS Yazılımları.">
+    <meta name="twitter:image" content="https://github.com/buraktonoz.png">
 
-  <!-- 4. Numarataj Pro -->
-  <url>
-    <loc>https://buraktonoz.com/Numarataj-Pro/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+    <!-- FAVICON & APP ICONS -->
+    <link rel="icon" type="image/png" href="https://github.com/buraktonoz.png">
+    <link rel="apple-touch-icon" href="https://github.com/buraktonoz.png">
+    <meta name="theme-color" content="#f8fafc">
 
-  <!-- 5. Evrak Dağıtım Sistemi -->
-  <url>
-    <loc>https://buraktonoz.com/numarataj/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+    <!-- COMPREHENSIVE JSON-LD STRUCTURED DATA (@graph) FOR GOOGLE RICH RESULTS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://buraktonoz.com/#person",
+          "name": "Burak Tonoz",
+          "jobTitle": "Harita Mühendisi & Yazılım Geliştirici",
+          "description": "CBS (GIS) sistemleri, belge işleme yazılımları, kurumsal otomasyon araçları ve IoT donanımları geliştiren Harita Mühendisi ve Program Geliştirici.",
+          "url": "https://buraktonoz.com/",
+          "image": "https://github.com/buraktonoz.png",
+          "email": "mailto:buraktonoz@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ankara",
+            "addressCountry": "TR"
+          },
+          "sameAs": [
+            "https://github.com/BURAKTONOZ",
+            "https://www.instagram.com/buraktonoz"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://buraktonoz.com/#website",
+          "url": "https://buraktonoz.com/",
+          "name": "Burak Tonoz | Harita Mühendisi & Yazılım Geliştirici",
+          "description": "Burak Tonoz tarafından geliştirilen Azimut, PDF Editör, Numarataj Pro, Personel Yönetim Sistemi ve mühendislik uygulamaları.",
+          "inLanguage": "tr-TR",
+          "publisher": {
+            "@id": "https://buraktonoz.com/#person"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://buraktonoz.com/#projects",
+          "name": "Burak Tonoz Yazılım, CBS ve Donanım Projeleri",
+          "numberOfItems": 13,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Azimut",
+                "url": "https://buraktonoz.com/azimut/",
+                "applicationCategory": "GeospatialApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Canlı GPS destekli ITRF96 / WGS84 koordinat dönüştürme, harita üzerinde nokta üretimi ve saha veri toplama terminali."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "PDF Editör & Araçları",
+                "url": "https://buraktonoz.com/pdf/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "PDF birleştirme, bölme, sayfa düzenleme, metin/imza ekleme, döndürme ve sıkıştırma işlemlerini tarayıcıda yapan kapsamlı PDF stüdyosu."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Personel Yönetim Sistemi",
+                "url": "https://buraktonoz.com/personel/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Kurum içi personel kadro takibi, görev dağılımı, izin ve operasyonel iş akışlarını tek merkezden yöneten kurumsal web platformu."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Numarataj Pro",
+                "url": "https://buraktonoz.com/Numarataj-Pro/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Resmi kurum yazışmalarını hızlandıran, dinamik şablon yönetimi ve gerçek zamanlı belge üretimi sağlayan web uygulaması."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Evrak Dağıtım Sistemi",
+                "url": "https://buraktonoz.com/numarataj/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Gelen resmi evrakları ve iş taleplerini personeller arasında adil, sıralı ve şeffaf biçimde dağıtan akıllı otomasyon sistemi."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Gerçek / Tüzel Kişi Bilgi Formu",
+                "url": "https://buraktonoz.com/abb/Ger%C3%A7ek-t%C3%BCzel/bilgi-formu.html",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Resmi başvurular için gerçek ve tüzel kişi bilgilerini standartlara uygun şekilde toplayıp anında çıktıya hazır belge üreten dijital form."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "BELTAŞ İzin Formu",
+                "url": "https://buraktonoz.com/izinformu/",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Personel izin taleplerini dijitalleştirerek hızlı veri girişi ile saniyeler içinde imzaya hazır resmi PDF izin belgesi oluşturan sistem."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "TonozShare",
+                "url": "https://buraktonoz.com/share/",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Cihazlar arasında hızlı, güvenli ve pratik şekilde dosya, metin ve bağlantı paylaşımı sağlayan bulut tabanlı veri aktarım aracı."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "PlakTon",
+                "url": "https://buraktonoz.com/PlakTon/",
+                "applicationCategory": "MultimediaApplication",
+                "operatingSystem": "ESP32, Embedded",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "ESP32 mikrodenetleyici, NFC etiketli plaklar, dokunmatik kontrol, RGB ambiyans aydınlatma ve 3D baskı gövdeye sahip akıllı müzik çalar projesi."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "TonoLink",
+                "url": "https://github.com/BURAKTONOZ",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Windows, Desktop",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Masaüstü çalışma ortamı için geliştirilen, sık kullanılan uygulama ve bağlantılara şık bir dock üzerinden tek tıkla erişim sağlayan Electron.js uygulaması."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "PayTak",
+                "url": "https://buraktonoz.com/PayTak/",
+                "applicationCategory": "GameApplication",
+                "operatingSystem": "Web, Desktop",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Masaüstünde yaşayan, besleyip etkileşime geçebileceğiniz nostaljik sanal evcil hayvan (Tamagotchi) simülasyonu ve masaüstü oyunu."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 12,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Federal Chat",
+                "url": "https://buraktonoz.com/federal-chat-app/",
+                "applicationCategory": "CommunicationApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Odalar halinde anlık ve düşük gecikmeli mesajlaşma imkanı sunan modern web tabanlı gerçek zamanlı sohbet uygulaması."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Morsify",
+                "url": "https://buraktonoz.com/Morsify/",
+                "applicationCategory": "UtilitiesApplication",
+                "operatingSystem": "Web",
+                "author": { "@id": "https://buraktonoz.com/#person" },
+                "description": "Metinleri anında Mors alfabesine, Mors kodlarını ise sesli ve görsel sinyal desteğiyle normal metne çeviren pratik araç."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
-  <!-- 6. Gerçek / Tüzel Kişi Bilgi Formu -->
-  <url>
-    <loc>https://buraktonoz.com/abb/Ger%C3%A7ek-t%C3%BCzel/bilgi-formu.html</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+    <!-- FONTS & ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- 7. TonozShare (Dosya Transferi) -->
-  <url>
-    <loc>https://buraktonoz.com/share/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
 
-  <!-- 8. BELTAŞ İzin Formu -->
-  <url>
-    <loc>https://buraktonoz.com/izinformu/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
+    <style>
+        /* Architectural Engineering Subtle Grid */
+        .bg-engineering-grid {
+            background-size: 32px 32px;
+            background-image: 
+                linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+        }
+        html.dark .bg-engineering-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
 
-  <!-- 9. PlakTon -->
-  <url>
-    <loc>https://buraktonoz.com/PlakTon/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
+        /* Award-Winning Luminous Glassmorphism Surfaces */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 
+                0 10px 35px -10px rgba(15, 23, 42, 0.06),
+                0 1px 3px 0 rgba(15, 23, 42, 0.03),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+        }
+        html.dark .glass-panel {
+            background: rgba(24, 24, 27, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 12px 36px -10px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+        }
 
-  <!-- 10. PayTak -->
-  <url>
-    <loc>https://buraktonoz.com/PayTak/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
+        /* Linear / Stripe Style Spotlight Card */
+        .spotlight-card {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.74);
+            backdrop-filter: blur(20px) saturate(170%);
+            -webkit-backdrop-filter: blur(20px) saturate(170%);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 
+                0 4px 20px -4px rgba(15, 23, 42, 0.045),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.28s ease,
+                        background-color 0.28s ease;
+        }
+        .spotlight-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.92);
+            border-color: rgba(148, 163, 184, 0.45);
+            box-shadow: 
+                0 18px 38px -12px rgba(15, 23, 42, 0.1),
+                0 4px 12px -2px rgba(15, 23, 42, 0.04),
+                inset 0 1px 0 0 rgba(255, 255, 255, 1);
+        }
+        html.dark .spotlight-card {
+            background: rgba(24, 24, 27, 0.68);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.35);
+        }
+        html.dark .spotlight-card:hover {
+            background: rgba(32, 32, 36, 0.85);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 18px 38px -12px rgba(0, 0, 0, 0.65);
+        }
 
-  <!-- 11. Federal Chat App -->
-  <url>
-    <loc>https://buraktonoz.com/federal-chat-app/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
+        /* Radial Spotlight Hover Overlay */
+        .spotlight-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(
+                500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(59, 130, 246, 0.08),
+                transparent 45%
+            );
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+        html.dark .spotlight-card::before {
+            background: radial-gradient(
+                500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(96, 165, 250, 0.12),
+                transparent 45%
+            );
+        }
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
 
-  <!-- 12. Morsify -->
-  <url>
-    <loc>https://buraktonoz.com/Morsify/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.4); border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.65); }
+    </style>
+</head>
 
-</urlset>
+<body class="bg-[#f8fafc] dark:bg-[#09090b] text-slate-800 dark:text-zinc-100 antialiased selection:bg-blue-600 selection:text-white min-h-screen flex flex-col relative overflow-x-hidden transition-colors duration-300">
+
+    <!-- SILKY RGB AURORA SMOKE CANVAS & ARCHITECTURAL GRID -->
+    <canvas id="aurora-smoke-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    <div class="fixed inset-0 bg-engineering-grid pointer-events-none z-0"></div>
+
+    <!-- TOAST NOTIFICATION (E-POSTA KOPYALANDI BİLDİRİMİ) -->
+    <div id="toast-notification" role="status" aria-live="polite"
+         class="fixed bottom-6 right-6 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300">
+        <div class="glass-panel px-4 py-3 rounded-2xl flex items-center gap-3 shadow-xl border border-emerald-500/30">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs">
+                <i class="fas fa-check"></i>
+            </span>
+            <span id="toast-text" class="text-xs font-semibold text-slate-800 dark:text-zinc-100">
+                buraktonoz@gmail.com panoya kopyalandı!
+            </span>
+        </div>
+    </div>
+
+    <!-- MAIN TWO-COLUMN CONTAINER -->
+    <div class="w-full max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 py-7 lg:py-10 relative z-10 flex-1">
+        
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
+            
+            <!-- =====================================================================
+                 LEFT STICKY SIDEBAR: PROFILE, PERSONAL LINKS & QUICK SHORTCUTS
+                 ===================================================================== -->
+            <aside class="w-full lg:w-[350px] shrink-0 lg:sticky lg:top-8 flex flex-col gap-5" itemscope itemtype="https://schema.org/Person">
+                <link itemprop="url" href="https://buraktonoz.com/">
+
+                <!-- 1. PROFILE & PERSONAL LINKS CARD -->
+                <div class="glass-panel rounded-3xl p-6">
+                    
+                    <!-- Top Row: Avatar + Theme Switcher -->
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-500 via-cyan-400 to-emerald-400 opacity-35 blur-sm group-hover:opacity-65 transition duration-500"></div>
+                            <img itemprop="image"
+                                 src="https://github.com/buraktonoz.png"
+                                 onerror="this.src='https://placehold.co/160x160/2563eb/ffffff?text=BT'"
+                                 alt="Burak Tonoz - Harita Mühendisi & Yazılım Geliştirici"
+                                 class="relative w-20 h-20 rounded-2xl object-cover border-2 border-white dark:border-zinc-800 shadow-md">
+                            <span class="absolute -bottom-1 -right-1 flex h-4 w-4" title="Sistemler Aktif">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white dark:border-zinc-900"></span>
+                            </span>
+                        </div>
+
+                        <!-- Light / Dark Theme Toggle -->
+                        <button id="theme-toggle" type="button" aria-label="Görünüm Temasını Değiştir"
+                                class="px-3 py-2 rounded-xl bg-white/80 dark:bg-zinc-800/80 hover:bg-white dark:hover:bg-zinc-700 border border-slate-200/80 dark:border-zinc-700 text-slate-600 dark:text-zinc-300 text-xs font-medium flex items-center gap-2 transition shadow-sm">
+                            <i class="fas fa-moon dark:hidden text-slate-700"></i>
+                            <i class="fas fa-sun hidden dark:inline text-amber-400"></i>
+                            <span class="dark:hidden">Koyu</span>
+                            <span class="hidden dark:inline">Açık</span>
+                        </button>
+                    </div>
+
+                    <!-- Identity & Title -->
+                    <div class="mb-3.5">
+                        <div class="flex items-center gap-2">
+                            <h1 itemprop="name" class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                                Burak Tonoz
+                            </h1>
+                            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20" title="Doğrulanmış Geliştirici">
+                                <i class="fas fa-circle-check text-[9px]"></i> Aktif
+                            </span>
+                        </div>
+                        <p itemprop="jobTitle" class="text-xs font-semibold text-blue-600 dark:text-blue-400 mt-1">
+                            Harita Mühendisi &amp; Yazılım Geliştirici
+                        </p>
+                    </div>
+
+                    <!-- Bio -->
+                    <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                        Coğrafi Bilgi Sistemleri (CBS/GIS), çevrimiçi PDF ve belge işleme araçları, kurumsal otomasyon yazılımları ile gömülü IoT donanımları geliştiren mühendislik ve yazılım merkezi.
+                    </p>
+
+                    <!-- Direct CTA to Contact Form -->
+                    <a href="#iletisim"
+                       class="w-full mb-5 py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-blue-600 dark:bg-white dark:hover:bg-blue-500 text-white dark:text-zinc-900 dark:hover:text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-sm transition-all">
+                        <i class="fas fa-paper-plane text-[11px]"></i>
+                        <span>Proje İstek &amp; İletişim Formu</span>
+                    </a>
+
+                    <!-- Personal Links -->
+                    <div class="pt-4 border-t border-slate-200/70 dark:border-zinc-800/80">
+                        <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-zinc-500 mb-2.5">
+                            Kişisel Bağlantılar &amp; İletişim
+                        </span>
+
+                        <div class="flex flex-col gap-2">
+                            <!-- GitHub -->
+                            <a itemprop="sameAs" href="https://github.com/BURAKTONOZ" target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-white/70 dark:bg-zinc-800/50 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/60 text-xs font-medium text-slate-700 dark:text-zinc-200 transition group">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fab fa-github text-sm text-slate-900 dark:text-white w-4 text-center"></i>
+                                    <span>github.com/BURAKTONOZ</span>
+                                </span>
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition"></i>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a itemprop="sameAs" href="https://www.instagram.com/buraktonoz" target="_blank" rel="noopener noreferrer"
+                               class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-white/70 dark:bg-zinc-800/50 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/60 text-xs font-medium text-slate-700 dark:text-zinc-200 transition group">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fab fa-instagram text-sm text-pink-600 dark:text-pink-400 w-4 text-center"></i>
+                                    <span>instagram.com/buraktonoz</span>
+                                </span>
+                                <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-pink-600 transition"></i>
+                            </a>
+
+                            <!-- Email (1-Click Copy + Mailto) -->
+                            <div class="flex items-center gap-1.5">
+                                <a itemprop="email" href="mailto:buraktonoz@gmail.com"
+                                   class="flex-1 flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-white/70 dark:bg-zinc-800/50 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/60 text-xs font-medium text-slate-700 dark:text-zinc-200 transition group">
+                                    <span class="flex items-center gap-2.5 truncate">
+                                        <i class="fas fa-envelope text-sm text-blue-600 dark:text-blue-400 w-4 text-center"></i>
+                                        <span class="truncate">buraktonoz@gmail.com</span>
+                                    </span>
+                                </a>
+                                <button type="button" data-copy-email="buraktonoz@gmail.com" title="E-Posta Adresini Kopyala"
+                                        class="shrink-0 px-3 py-2.5 rounded-xl bg-white/70 dark:bg-zinc-800/50 hover:bg-blue-50 dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/60 text-xs text-slate-600 dark:text-zinc-300 hover:text-blue-600 transition">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. QUICK SHORTCUTS MENU (HIZLI KISAYOLLAR) -->
+                <div class="glass-panel rounded-3xl p-5">
+                    <div class="flex items-center justify-between px-1 mb-3">
+                        <span class="text-xs font-bold text-slate-800 dark:text-zinc-200 flex items-center gap-2">
+                            <i class="fas fa-bolt text-blue-600 dark:text-blue-400"></i>
+                            Hızlı Kısayollar
+                        </span>
+                        <span class="text-[10px] font-mono text-slate-400 dark:text-zinc-500">13 Uygulama</span>
+                    </div>
+
+                    <nav aria-label="Uygulama Hızlı Kısayolları" class="flex flex-col gap-1 text-xs max-h-[380px] overflow-y-auto pr-1">
+                        <a href="https://buraktonoz.com/azimut/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[11px]"><i class="fas fa-location-crosshairs"></i></span>
+                                <span>Azimut Koordinat</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-emerald-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/pdf/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center text-[11px]"><i class="fas fa-file-pdf"></i></span>
+                                <span>PDF Editör &amp; Araçları</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-rose-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/personel/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center text-[11px]"><i class="fas fa-users-gear"></i></span>
+                                <span>Personel Yönetim Sistemi</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-purple-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center text-[11px]"><i class="fas fa-file-signature"></i></span>
+                                <span>Numarataj Pro</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-sky-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/numarataj/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-[11px]"><i class="fas fa-scale-balanced"></i></span>
+                                <span>Evrak Dağıtım Sistemi</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-amber-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/abb/Ger%C3%A7ek-t%C3%BCzel/bilgi-formu.html" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-[11px]"><i class="fas fa-id-card-clip"></i></span>
+                                <span>Gerçek / Tüzel Bilgi Formu</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-indigo-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/izinformu/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center text-[11px]"><i class="fas fa-calendar-check"></i></span>
+                                <span>BELTAŞ İzin Formu</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-teal-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/share/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-[11px]"><i class="fas fa-share-nodes"></i></span>
+                                <span>TonozShare</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-cyan-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/PlakTon/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center text-[11px]"><i class="fas fa-record-vinyl"></i></span>
+                                <span>PlakTon</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-pink-600 transition"></i>
+                        </a>
+
+                        <a href="https://github.com/BURAKTONOZ" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-[11px]"><i class="fas fa-desktop"></i></span>
+                                <span>TonoLink</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-blue-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/PayTak/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 flex items-center justify-center text-[11px]"><i class="fas fa-ghost"></i></span>
+                                <span>PayTak</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-yellow-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/federal-chat-app/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-violet-500/10 text-violet-600 dark:text-violet-400 flex items-center justify-center text-[11px]"><i class="fas fa-comments"></i></span>
+                                <span>Federal Chat</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-violet-600 transition"></i>
+                        </a>
+
+                        <a href="https://buraktonoz.com/Morsify/" target="_blank" rel="noopener"
+                           class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/80 dark:hover:bg-zinc-800/70 text-slate-700 dark:text-zinc-300 font-medium transition group">
+                            <span class="flex items-center gap-2.5">
+                                <span class="w-6 h-6 rounded-lg bg-orange-500/10 text-orange-600 dark:text-orange-400 flex items-center justify-center text-[11px]"><i class="fas fa-wave-square"></i></span>
+                                <span>Morsify</span>
+                            </span>
+                            <i class="fas fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-orange-600 transition"></i>
+                        </a>
+                    </nav>
+                </div>
+
+            </aside>
+
+            <!-- =====================================================================
+                 RIGHT MAIN CONTENT: ALL 13 SEMANTIC SEO PROJECT CARDS & CONTACT FORM
+                 ===================================================================== -->
+            <main class="flex-1 min-w-0 flex flex-col gap-10">
+                
+                <!-- PROJECTS SHOWCASE SECTION -->
+                <section id="projeler" aria-labelledby="projects-heading">
+                    
+                    <!-- Top Header, Search & Category Filter Bar -->
+                    <div class="glass-panel rounded-3xl p-5 sm:p-6 mb-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 id="projects-heading" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                                        Projeler &amp; Uygulama Vitrini
+                                    </h2>
+                                    <span id="visible-count-badge" class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-slate-900/5 dark:bg-white/10 text-slate-600 dark:text-zinc-300">
+                                        13 Proje
+                                    </span>
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
+                                    Tüm projeler doğrudan erişime açıktır; incelemek istediğiniz uygulamanın kartına tıklayabilirsiniz.
+                                </p>
+                            </div>
+
+                            <!-- Live Search Input -->
+                            <div class="relative w-full md:w-72">
+                                <i class="fas fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 pointer-events-none"></i>
+                                <input id="project-search" type="search" placeholder="Proje veya araç ara (örn: PDF, Azimut)..."
+                                       aria-label="Projelerde ara"
+                                       class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white/85 dark:bg-zinc-900/80 border border-slate-200/90 dark:border-zinc-700/80 text-xs text-slate-800 dark:text-zinc-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition">
+                            </div>
+                        </div>
+
+                        <!-- Category Pills -->
+                        <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Proje Kategorileri">
+                            <button type="button" data-filter="all"
+                                    class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-zinc-900 shadow-sm transition">
+                                Tümü (13)
+                            </button>
+                            <button type="button" data-filter="cbs"
+                                    class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-white/75 dark:bg-zinc-800/70 text-slate-600 dark:text-zinc-300 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/70 transition">
+                                Harita &amp; CBS
+                            </button>
+                            <button type="button" data-filter="belge"
+                                    class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-white/75 dark:bg-zinc-800/70 text-slate-600 dark:text-zinc-300 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/70 transition">
+                                PDF &amp; Belge Araçları
+                            </button>
+                            <button type="button" data-filter="kurumsal"
+                                    class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-white/75 dark:bg-zinc-800/70 text-slate-600 dark:text-zinc-300 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/70 transition">
+                                Kurumsal &amp; Otomasyon
+                            </button>
+                            <button type="button" data-filter="donanim"
+                                    class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-white/75 dark:bg-zinc-800/70 text-slate-600 dark:text-zinc-300 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/70 transition">
+                                Donanım &amp; Masaüstü
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- =================================================================
+                         STATIC HTML SEMANTIC PROJECT CARDS (INDEXED BY GOOGLEBOT)
+                         ================================================================= -->
+                    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                        <!-- 1. Azimut (Öncelik #1) -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="cbs"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="GeospatialApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-location-crosshairs"></i>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500 text-white text-[10px] font-semibold tracking-wide">
+                                            Öne Çıkan
+                                        </span>
+                                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 text-[11px] font-mono">
+                                            CBS &amp; Harita
+                                        </span>
+                                    </div>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/azimut/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        Azimut
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Canlı GPS destekli ITRF96 / WGS84 koordinat dönüştürme, harita üzerinde nokta üretimi ve saha veri toplama terminali.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                                <span>Terminali Aç</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/azimut</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 2. PDF Editör & Araçları (Öncelik #2) -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="belge"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="BusinessApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="px-2.5 py-0.5 rounded-full bg-rose-500 text-white text-[10px] font-semibold tracking-wide">
+                                            Öne Çıkan
+                                        </span>
+                                        <span class="px-2.5 py-1 rounded-lg bg-rose-500/10 text-rose-700 dark:text-rose-300 border border-rose-500/20 text-[11px] font-mono">
+                                            Belge Aracı
+                                        </span>
+                                    </div>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/pdf/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        PDF Editör &amp; Araçları
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    PDF birleştirme, bölme, sayfa düzenleme, metin/imza ekleme, döndürme ve sıkıştırma işlemlerini tarayıcıda yapan kapsamlı PDF stüdyosu.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-rose-600 dark:text-rose-400">
+                                <span>PDF Editörü Aç</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/pdf</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 3. Personel Yönetim Sistemi -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="kurumsal"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="BusinessApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-users-gear"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 text-[11px] font-mono">
+                                        Kurumsal Sistem
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/personel/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        Personel Yönetim Sistemi
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Kurum içi personel kadro takibi, görev dağılımı, izin ve operasyonel iş akışlarını tek merkezden yöneten kurumsal web platformu.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-purple-600 dark:text-purple-400">
+                                <span>Sisteme Git</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/personel</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 4. Numarataj Pro -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="kurumsal"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="BusinessApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-600 dark:text-sky-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-file-signature"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 text-[11px] font-mono">
+                                        Kurumsal &amp; Belge
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/Numarataj-Pro/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        Numarataj Pro
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Resmi kurum yazışmalarını hızlandıran, dinamik şablon yönetimi ve gerçek zamanlı belge üretimi sağlayan web uygulaması.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-sky-600 dark:text-sky-400">
+                                <span>Sistemi İncele</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/Numarataj-Pro</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 5. Evrak Dağıtım Sistemi -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="kurumsal"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="BusinessApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-scale-balanced"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 text-[11px] font-mono">
+                                        Otomasyon
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/numarataj/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        Evrak Dağıtım Sistemi
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Gelen resmi evrakları ve iş taleplerini personeller arasında adil, sıralı ve şeffaf biçimde dağıtan akıllı otomasyon sistemi.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-amber-600 dark:text-amber-400">
+                                <span>Sistemi Aç</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/numarataj</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 6. Gerçek / Tüzel Kişi Bilgi Formu -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="belge"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="BusinessApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-id-card-clip"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20 text-[11px] font-mono">
+                                        Dijital Form &amp; Belge
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/abb/Ger%C3%A7ek-t%C3%BCzel/bilgi-formu.html" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        Gerçek / Tüzel Kişi Bilgi Formu
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Resmi başvurular için gerçek ve tüzel kişi bilgilerini standartlara uygun şekilde toplayıp anında çıktıya hazır belge üreten dijital form.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+                                <span>Bilgi Formunu Aç</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>Formu Başlat</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 7. BELTAŞ İzin Formu -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="kurumsal"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="BusinessApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20 text-[11px] font-mono">
+                                        Kurum İçi Otomasyon
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/izinformu/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        BELTAŞ İzin Formu
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Personel izin taleplerini dijitalleştirerek hızlı veri girişi ile saniyeler içinde imzaya hazır resmi PDF izin belgesi oluşturan sistem.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-teal-600 dark:text-teal-400">
+                                <span>Formu Aç</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/izinformu</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 8. TonozShare -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="belge"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="UtilitiesApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-share-nodes"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20 text-[11px] font-mono">
+                                        Veri Transferi
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/share/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        TonozShare
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Cihazlar arasında hızlı, güvenli ve pratik şekilde dosya, metin ve bağlantı paylaşımı sağlayan bulut tabanlı veri aktarım aracı.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+                                <span>Dosya Paylaş</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/share</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 9. PlakTon -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="donanim"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="MultimediaApplication">
+                            <meta itemprop="operatingSystem" content="ESP32, Embedded">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-pink-500/10 border border-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-record-vinyl"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-pink-500/10 text-pink-700 dark:text-pink-300 border border-pink-500/20 text-[11px] font-mono">
+                                        IoT &amp; Donanım
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/PlakTon/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        PlakTon
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    ESP32 mikrodenetleyici, NFC etiketli plaklar, dokunmatik kontrol, RGB ambiyans aydınlatma ve 3D baskı gövdeye sahip akıllı müzik çalar projesi.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-pink-600 dark:text-pink-400">
+                                <span>Projeyi İncele</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/PlakTon</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 10. TonoLink -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="donanim"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="UtilitiesApplication">
+                            <meta itemprop="operatingSystem" content="Windows, Desktop">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20 text-[11px] font-mono">
+                                        Masaüstü &amp; Electron
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                    <a itemprop="url" href="https://github.com/BURAKTONOZ" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        TonoLink
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Masaüstü çalışma ortamı için geliştirilen, sık kullanılan uygulama ve bağlantılara şık bir dock üzerinden tek tıkla erişim sağlayan Electron.js uygulaması.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
+                                <span>GitHub'da İncele</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>github.com/BURAKTONOZ</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 11. PayTak -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="donanim"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="GameApplication">
+                            <meta itemprop="operatingSystem" content="Web, Desktop">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-ghost"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-yellow-500/10 text-yellow-700 dark:text-yellow-300 border border-yellow-500/20 text-[11px] font-mono">
+                                        Simülasyon &amp; Oyun
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/PayTak/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        PayTak
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Masaüstünde yaşayan, besleyip etkileşime geçebileceğiniz nostaljik sanal evcil hayvan (Tamagotchi) simülasyonu ve masaüstü oyunu.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-yellow-600 dark:text-yellow-400">
+                                <span>Oyunu Başlat</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/PayTak</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 12. Federal Chat -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="kurumsal"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="CommunicationApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/20 text-[11px] font-mono">
+                                        Gerçek Zamanlı İletişim
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/federal-chat-app/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        Federal Chat
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Odalar halinde anlık ve düşük gecikmeli mesajlaşma imkanı sunan modern web tabanlı gerçek zamanlı sohbet uygulaması.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-violet-600 dark:text-violet-400">
+                                <span>Sohbete Katıl</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/federal-chat-app</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                        <!-- 13. Morsify -->
+                        <article itemscope itemtype="https://schema.org/SoftwareApplication"
+                                 data-category="belge"
+                                 class="project-card spotlight-card rounded-3xl p-6 flex flex-col justify-between group">
+                            <meta itemprop="applicationCategory" content="UtilitiesApplication">
+                            <meta itemprop="operatingSystem" content="Web">
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between gap-2 mb-4">
+                                    <div class="w-11 h-11 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-600 dark:text-orange-400 flex items-center justify-center text-lg shadow-sm">
+                                        <i class="fas fa-wave-square"></i>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-orange-500/10 text-orange-700 dark:text-orange-300 border border-orange-500/20 text-[11px] font-mono">
+                                        Web Aracı
+                                    </span>
+                                </div>
+                                <h3 itemprop="name" class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                                    <a itemprop="url" href="https://buraktonoz.com/Morsify/" target="_blank" rel="noopener" class="focus:outline-none after:absolute after:inset-0">
+                                        Morsify
+                                    </a>
+                                </h3>
+                                <p itemprop="description" class="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed mb-5">
+                                    Metinleri anında Mors alfabesine, Mors kodlarını ise sesli ve görsel sinyal desteğiyle normal metne çeviren pratik araç.
+                                </p>
+                            </div>
+                            <div class="relative z-10 pt-3.5 border-t border-slate-200/60 dark:border-zinc-800/80 flex items-center justify-between text-xs font-semibold text-orange-600 dark:text-orange-400">
+                                <span>Çeviri Yap</span>
+                                <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                    <span>buraktonoz.com/Morsify</span>
+                                    <i class="fas fa-arrow-right text-[10px]"></i>
+                                </span>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <!-- Empty Search Result State -->
+                    <div id="empty-state" class="hidden glass-panel rounded-3xl p-10 text-center mt-4">
+                        <div class="w-12 h-12 rounded-2xl bg-slate-500/10 text-slate-500 mx-auto flex items-center justify-center text-lg mb-3">
+                            <i class="fas fa-magnifying-glass"></i>
+                        </div>
+                        <p class="text-sm font-bold text-slate-800 dark:text-zinc-100">Aramanızla eşleşen proje bulunamadı.</p>
+                        <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1 mb-4">Farklı bir anahtar kelime yazabilir veya tüm projeleri görüntüleyebilirsiniz.</p>
+                        <button id="reset-search-btn" type="button"
+                                class="px-4 py-2 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-zinc-900 text-xs font-semibold">
+                            Tüm Projeleri Göster
+                        </button>
+                    </div>
+                </section>
+
+                <!-- =================================================================
+                     BOTTOM SECTION: PROJE İSTEK, ÖNERİ & İLETİŞİM FORMU
+                     ================================================================= -->
+                <section id="iletisim" aria-labelledby="contact-heading" class="glass-panel rounded-3xl p-6 sm:p-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-200/70 dark:border-zinc-800">
+                        <div>
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 font-semibold mb-1">
+                                <i class="fas fa-paper-plane"></i> Doğrudan İletişim &amp; Proje Talebi
+                            </span>
+                            <h2 id="contact-heading" class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                                Proje İstek, Öneri &amp; İletişim Formu
+                            </h2>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">
+                                Özel yazılım, harita/CBS çözümleri, kurumsal otomasyon talepleriniz veya mevcut projeler için önerilerinizi doğrudan iletebilirsiniz.
+                            </p>
+                        </div>
+
+                        <!-- 1-Click Copy Email Button -->
+                        <button type="button" data-copy-email="buraktonoz@gmail.com"
+                                class="shrink-0 inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/85 dark:bg-zinc-800 hover:bg-blue-50 dark:hover:bg-zinc-700 border border-slate-200/90 dark:border-zinc-700 text-xs font-semibold text-slate-700 dark:text-zinc-200 transition shadow-sm">
+                            <i class="far fa-copy text-blue-600 dark:text-blue-400"></i>
+                            <span>buraktonoz@gmail.com</span>
+                        </button>
+                    </div>
+
+                    <form id="contact-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="sender-name" class="block text-xs font-semibold text-slate-700 dark:text-zinc-300 mb-1.5">
+                                Ad Soyad *
+                            </label>
+                            <input type="text" id="sender-name" name="name" required placeholder="Adınız ve Soyadınız"
+                                   class="w-full px-4 py-2.5 rounded-xl bg-white/85 dark:bg-zinc-900/75 border border-slate-200/90 dark:border-zinc-700 text-xs text-slate-800 dark:text-zinc-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition">
+                        </div>
+
+                        <div>
+                            <label for="sender-email" class="block text-xs font-semibold text-slate-700 dark:text-zinc-300 mb-1.5">
+                                E-Posta Adresi *
+                            </label>
+                            <input type="email" id="sender-email" name="email" required placeholder="ornek@eposta.com"
+                                   class="w-full px-4 py-2.5 rounded-xl bg-white/85 dark:bg-zinc-900/75 border border-slate-200/90 dark:border-zinc-700 text-xs text-slate-800 dark:text-zinc-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition">
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label for="sender-subject" class="block text-xs font-semibold text-slate-700 dark:text-zinc-300 mb-1.5">
+                                Konu / Proje Türü *
+                            </label>
+                            <select id="sender-subject" name="subject" required
+                                    class="w-full px-4 py-2.5 rounded-xl bg-white/85 dark:bg-zinc-900/75 border border-slate-200/90 dark:border-zinc-700 text-xs text-slate-800 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition">
+                                <option value="Özel Yazılım / Web Uygulaması">Özel Yazılım / Web Uygulaması</option>
+                                <option value="Harita & CBS Çözümü">Harita &amp; CBS Çözümü</option>
+                                <option value="Kurumsal Otomasyon">Kurumsal Otomasyon</option>
+                                <option value="Mevcut Projeler İçin Öneri">Mevcut Projeler İçin Öneri</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label for="sender-message" class="block text-xs font-semibold text-slate-700 dark:text-zinc-300 mb-1.5">
+                                Mesajınız *
+                            </label>
+                            <textarea id="sender-message" name="message" rows="4" required
+                                      placeholder="Proje talebinizi, önerinizi veya mesajınızı detaylıca yazabilirsiniz..."
+                                      class="w-full px-4 py-2.5 rounded-xl bg-white/85 dark:bg-zinc-900/75 border border-slate-200/90 dark:border-zinc-700 text-xs text-slate-800 dark:text-zinc-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition resize-y"></textarea>
+                        </div>
+
+                        <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                            <p id="form-status" class="text-xs text-slate-500 dark:text-zinc-400">
+                                Mesajınız doğrudan <strong class="font-semibold text-slate-700 dark:text-zinc-200">buraktonoz@gmail.com</strong> adresine iletilir.
+                            </p>
+
+                            <button id="submit-btn" type="submit"
+                                    class="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-md shadow-blue-500/20 transition">
+                                <i class="fas fa-paper-plane"></i>
+                                <span id="submit-btn-text">Mesajı Gönder</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <!-- MINIMAL FOOTER (ONLY PERSONAL INFO & SOCIAL LINKS) -->
+    <footer class="mt-auto border-t border-slate-200/70 dark:border-zinc-800/80 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md py-6 relative z-10">
+        <div class="w-full max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-zinc-400">
+            <p>
+                &copy; 2026 <strong class="font-semibold text-slate-800 dark:text-zinc-200">Burak Tonoz</strong> — Harita Mühendisi &amp; Yazılım Geliştirici. Tüm hakları saklıdır.
+            </p>
+            <div class="flex items-center gap-5 font-medium">
+                <a href="https://github.com/BURAKTONOZ" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">GitHub</a>
+                <a href="https://www.instagram.com/buraktonoz" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:hover:text-white transition">Instagram</a>
+                <a href="mailto:buraktonoz@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition">buraktonoz@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT: AURORA SMOKE CANVAS, SPOTLIGHT CARDS, LIVE FILTER & CONTACT FORM -->
+    <script>
+        (function () {
+            /* =====================================================================
+               1. LIGHT / DARK THEME TOGGLE (Default: Light Pearl #f8fafc)
+               ===================================================================== */
+            const htmlEl = document.documentElement;
+            const themeBtn = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('buraktonoz_theme');
+
+            if (savedTheme === 'dark') {
+                htmlEl.classList.add('dark');
+                htmlEl.classList.remove('light');
+            }
+
+            themeBtn.addEventListener('click', () => {
+                const isDark = htmlEl.classList.toggle('dark');
+                htmlEl.classList.toggle('light', !isDark);
+                localStorage.setItem('buraktonoz_theme', isDark ? 'dark' : 'light');
+            });
+
+            /* =====================================================================
+               2. INTERACTIVE RGB AURORA SMOKE CANVAS
+               ===================================================================== */
+            const canvas = document.getElementById('aurora-smoke-canvas');
+            const ctx = canvas.getContext('2d');
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+
+            function resizeCanvas() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const smokeOrbs = [
+                { x: 0.18, y: 0.20, vx: 0.00025, vy: 0.00018, r: 0.44, light: 'rgba(56, 189, 248, 0.20)', dark: 'rgba(14, 165, 233, 0.14)' },  // Sky Cyan
+                { x: 0.82, y: 0.22, vx: -0.00022, vy: 0.00026, r: 0.46, light: 'rgba(139, 92, 246, 0.16)', dark: 'rgba(139, 92, 246, 0.12)' }, // Violet
+                { x: 0.48, y: 0.78, vx: 0.00019, vy: -0.00022, r: 0.48, light: 'rgba(16, 185, 129, 0.16)', dark: 'rgba(16, 185, 129, 0.10)' }, // Emerald
+                { x: 0.85, y: 0.80, vx: -0.00024, vy: -0.00019, r: 0.40, light: 'rgba(244, 63, 94, 0.14)', dark: 'rgba(244, 63, 94, 0.09)' }   // Rose
+            ];
+
+            let pointer = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 };
+            window.addEventListener('pointermove', (e) => {
+                pointer.tx = e.clientX / Math.max(width, 1);
+                pointer.ty = e.clientY / Math.max(height, 1);
+            });
+
+            function renderAuroraSmoke() {
+                ctx.clearRect(0, 0, width, height);
+                const isDark = htmlEl.classList.contains('dark');
+                const maxDim = Math.max(width, height);
+
+                pointer.x += (pointer.tx - pointer.x) * 0.04;
+                pointer.y += (pointer.ty - pointer.y) * 0.04;
+
+                smokeOrbs.forEach((orb, idx) => {
+                    orb.x += orb.vx;
+                    orb.y += orb.vy;
+                    if (orb.x < 0.05 || orb.x > 0.95) orb.vx *= -1;
+                    if (orb.y < 0.05 || orb.y > 0.95) orb.vy *= -1;
+
+                    const cx = (orb.x + (pointer.x - 0.5) * 0.05 * (idx % 2 === 0 ? 1 : -1)) * width;
+                    const cy = (orb.y + (pointer.y - 0.5) * 0.05 * (idx % 2 === 0 ? -1 : 1)) * height;
+                    const radius = orb.r * maxDim;
+
+                    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+                    grad.addColorStop(0, isDark ? orb.dark : orb.light);
+                    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                    ctx.fillStyle = grad;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(renderAuroraSmoke);
+            }
+
+            window.onload = function () {
+                renderAuroraSmoke();
+            };
+
+            /* =====================================================================
+               3. LINEAR / STRIPE STYLE SPOTLIGHT RADIAL GLOW ON CARDS
+               ===================================================================== */
+            const spotlightCards = document.querySelectorAll('.spotlight-card');
+            spotlightCards.forEach((card) => {
+                card.addEventListener('pointermove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                    card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                });
+            });
+
+            /* =====================================================================
+               4. LIVE PROJECT FILTER & INSTANT SEARCH
+               ===================================================================== */
+            const searchInput = document.getElementById('project-search');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const visibleCountBadge = document.getElementById('visible-count-badge');
+            const emptyState = document.getElementById('empty-state');
+            const resetSearchBtn = document.getElementById('reset-search-btn');
+            let activeCategory = 'all';
+
+            function applyFilter() {
+                const query = (searchInput.value || '').toLocaleLowerCase('tr-TR').trim();
+                let count = 0;
+
+                projectCards.forEach((card) => {
+                    const category = card.getAttribute('data-category');
+                    const content = card.innerText.toLocaleLowerCase('tr-TR');
+                    const matchesCategory = (activeCategory === 'all' || category === activeCategory);
+                    const matchesQuery = (!query || content.includes(query));
+
+                    if (matchesCategory && matchesQuery) {
+                        card.classList.remove('hidden');
+                        count++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                visibleCountBadge.textContent = `${count} Proje`;
+                emptyState.classList.toggle('hidden', count > 0);
+            }
+
+            filterBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    activeCategory = btn.getAttribute('data-filter');
+                    filterBtns.forEach((b) => {
+                        b.className = 'filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium bg-white/75 dark:bg-zinc-800/70 text-slate-600 dark:text-zinc-300 hover:bg-white dark:hover:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700/70 transition';
+                    });
+                    btn.className = 'filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-zinc-900 shadow-sm transition';
+                    applyFilter();
+                });
+            });
+
+            searchInput.addEventListener('input', applyFilter);
+
+            resetSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                activeCategory = 'all';
+                filterBtns[0].click();
+            });
+
+            /* =====================================================================
+               5. 1-CLICK EMAIL COPY WITH TOAST NOTIFICATION
+               ===================================================================== */
+            const toastEl = document.getElementById('toast-notification');
+            const toastText = document.getElementById('toast-text');
+            let toastTimer = null;
+
+            function showToast(msg) {
+                toastText.textContent = msg;
+                toastEl.classList.remove('opacity-0', 'translate-y-3');
+                toastEl.classList.add('opacity-100', 'translate-y-0');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toastEl.classList.add('opacity-0', 'translate-y-3');
+                    toastEl.classList.remove('opacity-100', 'translate-y-0');
+                }, 2600);
+            }
+
+            document.querySelectorAll('[data-copy-email]').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const email = btn.getAttribute('data-copy-email');
+                    const temp = document.createElement('textarea');
+                    temp.value = email;
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                    showToast(`${email} panoya kopyalandı!`);
+                });
+            });
+
+            /* =====================================================================
+               6. DIRECT CONTACT FORM (FORMSUBMIT AJAX + MAILTO FALLBACK)
+               ===================================================================== */
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitBtnText = document.getElementById('submit-btn-text');
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('sender-name').value.trim();
+                const email = document.getElementById('sender-email').value.trim();
+                const subject = document.getElementById('sender-subject').value.trim();
+                const message = document.getElementById('sender-message').value.trim();
+
+                submitBtn.disabled = true;
+                submitBtnText.textContent = 'Gönderiliyor...';
+
+                try {
+                    const response = await fetch('https://formsubmit.co/ajax/buraktonoz@gmail.com', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: name,
+                            email: email,
+                            _subject: `[buraktonoz.com] ${subject} — ${name}`,
+                            category: subject,
+                            message: message
+                        })
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = 'Mesajınız başarıyla buraktonoz@gmail.com adresine iletildi! Teşekkürler.';
+                        formStatus.className = 'text-xs font-semibold text-emerald-600 dark:text-emerald-400';
+                        contactForm.reset();
+                        showToast('Mesajınız başarıyla gönderildi!');
+                    } else {
+                        throw new Error('Fallback to mailto');
+                    }
+                } catch (err) {
+                    const mailSubject = encodeURIComponent(`[buraktonoz.com] ${subject} — ${name}`);
+                    const mailBody = encodeURIComponent(
+                        `Gönderen: ${name}\nE-Posta: ${email}\nKonu: ${subject}\n\nMesaj:\n${message}`
+                    );
+                    window.location.href = `mailto:buraktonoz@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+                    formStatus.textContent = 'E-posta istemciniz açılıyor (buraktonoz@gmail.com)...';
+                    formStatus.className = 'text-xs font-semibold text-blue-600 dark:text-blue-400';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtnText.textContent = 'Mesajı Gönder';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
